@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\modules\payment\payment_systems;
 
 use Yii;

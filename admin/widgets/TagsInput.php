@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\widgets;
 
 use dosamigos\selectize\SelectizeTextInput;

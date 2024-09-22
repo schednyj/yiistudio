@@ -1,4 +1,4 @@
-<?
+<?php
 
 use admin\modules\article\models\Item;
 use yii\helpers\Html;

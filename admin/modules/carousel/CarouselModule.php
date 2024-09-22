@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\modules\carousel;
 
 class CarouselModule extends \admin\base\Module

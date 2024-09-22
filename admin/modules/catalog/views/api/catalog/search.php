@@ -1,4 +1,4 @@
-<?
+<?php
 
 use admin\modules\page\api\Page;
 use yii\helpers\Html;

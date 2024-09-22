@@ -1,4 +1,4 @@
-<?
+<?php
 
 use yii\helpers\Url;
 use admin\models\Setting;
@@ -37,11 +37,11 @@ $this->title = Yii::t('admin', 'Система');
     <div class="col-md-2">        
     </div>
     <div class="col-md-4">
-        <?
+        <?php
         if (YII_DEBUG) {
             ?>
             <a href="<?= Url::to(['/admin/system/clear-items']) ?>" class="btn btn-danger btn-block"><i class="fa fa-times"></i> <?= Yii::t('admin', 'Удалить все элементы каталога') ?></a>
-            <?
+            <?php
         }
         ?>
     </div>
@@ -56,11 +56,11 @@ $this->title = Yii::t('admin', 'Система');
     <div class="col-md-2">        
     </div>
     <div class="col-md-4">
-        <?
+        <?php
         if (YII_DEBUG) {
             ?>
             <a href="<?= Url::to(['/admin/system/clear-photos']) ?>" class="btn btn-danger btn-block"><i class="fa fa-times"></i> <?= Yii::t('admin', 'Удалить все фото') ?></a>
-            <?
+            <?php
         }
         ?>
     </div>
@@ -73,29 +73,29 @@ $this->title = Yii::t('admin', 'Система');
         <a href="<?= Url::to(['/admin/system/resave-items']) ?>" class="btn btn-warning btn-block"><i class="fa fa-redo"></i> <?= Yii::t('admin', 'Пересохранение элементов каталога') ?></a>
     </div>
     <div class="col-md-4">
-        <?
+        <?php
         if (YII_DEBUG) {
             ?>
             <a href="<?= Url::to(['/admin/system/clear-users-no-order']) ?>" class="btn btn-danger btn-block"><i class="fa fa-times"></i> <?= Yii::t('admin', 'Удалить пользователей, у которых нет заказов') ?></a>
-            <?
+            <?php
         }
         ?>
     </div>
 </div>
-<?
+<?php
 if (YII_DEBUG) {
     ?>
     <br>
     <br>
     <div class="tab-pane active p-20">       
 
-        <?
+        <?php
         try {            
             ?>
             <h2><?= Yii::t('admin', 'Font Awesome иконки') ?> </h2>
             <a href="http://fontawesome.io" title="http://fontawesome.io">http://fontawesome.io</a>
             <br>
-            <?
+            <?php
             foreach ($fontAwesomeAsset->iconsFromYaml() as $key => $category) {
                 echo '<br><h3>' . $category['label'] . '</h3><hr><div class="row">';
                 foreach ($category['icons'] as $icon) {
@@ -109,6 +109,6 @@ if (YII_DEBUG) {
         ?>
     </div>
 
-    <?
+    <?php
 }
 ?>

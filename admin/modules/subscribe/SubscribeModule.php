@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\modules\subscribe;
 
 class SubscribeModule extends \admin\base\Module

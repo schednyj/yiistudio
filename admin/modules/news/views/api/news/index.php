@@ -1,4 +1,4 @@
-<?
+<?php
 
 use admin\modules\news\api\News;
 use admin\modules\page\api\Page;

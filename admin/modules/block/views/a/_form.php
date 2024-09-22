@@ -1,4 +1,4 @@
-<?
+<?php
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
@@ -6,7 +6,7 @@ use yii\helpers\Url;
 use admin\widgets\Redactor;
 
 ?>
-<?
+<?php
 
 $form = ActiveForm::begin([
             'enableAjaxValidation' => true,

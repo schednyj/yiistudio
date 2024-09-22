@@ -1,4 +1,4 @@
-<?
+<?php
 /* @var $this \yii\web\View */
 /* @var $content string */
 
@@ -79,17 +79,17 @@ $shopCart .= '</a>';
         <div class="col-md-6">
             <div class="pull-right">
                 <ul class="nav navbar-nav">
-                    <?
+                    <?php
                     if (Yii::$app->user->isGuest) {
                         ?>
                         <li><a href="<?= Url::to(['/user/registration']) ?>"><i class="fa fa-user"></i> <?= Yii::t('app', 'Регистрация') ?></a></li>
                         <li><a href="<?= Url::to(['/user/login']) ?>"><i class="fa fa-lock"></i> <?= Yii::t('app', 'Вход') ?></a></li>
-                        <?
+                        <?php
                     } else {
                         ?>
                         <li><a href="<?= Url::to(['/shopcart/orders']) ?>"><i class="fa fa-list-ul"></i> <?= Yii::t('app', 'Мои заказы') ?></a></li>
                         <li><a href="<?= Url::to(['/user/logout']) ?>"><i class="fa fa-lock"></i> <?= Yii::$app->user->identity->email ?> (<?= Yii::t('app', 'Выход') ?>)</a></li>
-                        <?
+                        <?php
                     }
                     ?>
                     <li><?= $shopCart ?></li>
@@ -98,7 +98,7 @@ $shopCart .= '</a>';
         </div>
     </div>
 </div>
-<?
+<?php
 NavBar::begin();
 $menuItems[] = ['label' => Yii::t('app', 'Главная'), 'url' => ['/']];
 $menuItems[] = ['label' => Yii::t('app', 'Каталог'), 'url' => ['/catalog']];
@@ -115,7 +115,7 @@ echo Nav::widget([
 <div class="navbar-form navbar-right" role="search">
     <?= $this->render('@admin/modules/catalog/views/api/catalog/_search_form', ['sm' => true]) ?>
 </div>
-<?
+<?php
 NavBar::end();
 ?>
 <div class="container">

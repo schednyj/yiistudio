@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\modules\file\api;
 
 use Yii;

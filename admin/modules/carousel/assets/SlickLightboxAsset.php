@@ -1,4 +1,4 @@
-<?
+<?php
 /**
  * Asset manager for Slick widget.
  *

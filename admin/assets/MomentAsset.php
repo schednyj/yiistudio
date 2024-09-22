@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\assets;
 
 class MomentAsset extends \yii\web\AssetBundle

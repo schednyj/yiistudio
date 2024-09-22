@@ -1,4 +1,4 @@
-<?
+<?php
 
 use admin\modules\catalog\api\Catalog;
 use admin\modules\page\api\Page;
@@ -17,11 +17,11 @@ $this->params['breadcrumbs'][] = $page->title;
             <?= $page->seo('h1') ?>
         </h1>
         <ul class="list-unstyled">
-            <?
+            <?php
             foreach (Catalog::category()->brands() as $brand) {
                 ?>
                 <li><a href="<?= Url::to(['/brand', 'slug' => $brand->slug]) ?>"><?= $brand->title; ?></a></li>
-                <?
+                <?php
             }
             ?>        
         </ul>

@@ -1,4 +1,4 @@
-<?
+<?php
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -16,15 +16,15 @@ $this->params['breadcrumbs'][] = Yii::t('admin', 'Редактирование �
 
     <div class="links-form">
 
-        <?
+        <?php
         if (!empty($error)) {
             ?>
             <div class="error-summary">
-                <?
+                <?php
                 echo implode('<br>', $error);
                 ?>
             </div>
-        <?
+        <?php
         }
         ?>
 

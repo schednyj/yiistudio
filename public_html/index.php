@@ -1,4 +1,4 @@
-<?
+<?php
 //Yii Studio 
 //https://yiistudio.ru
 

@@ -1,4 +1,4 @@
-<?
+<?php
 
 use admin\models\Setting;
 use yii\helpers\Url;

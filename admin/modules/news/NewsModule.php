@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\modules\news;
 
 class NewsModule extends \admin\base\Module

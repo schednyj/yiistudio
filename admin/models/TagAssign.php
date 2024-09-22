@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\models;
 
 class TagAssign extends \admin\base\ActiveRecord

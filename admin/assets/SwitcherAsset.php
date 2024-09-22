@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\assets;
 
 class SwitcherAsset extends \yii\web\AssetBundle

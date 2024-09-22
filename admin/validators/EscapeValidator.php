@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\validators;
 
 use yii\validators\Validator;

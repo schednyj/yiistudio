@@ -1,4 +1,4 @@
-<?
+<?php
 
 use admin\modules\carousel\models\Carousel;
 use yii\helpers\Html;

@@ -1,4 +1,4 @@
-<?
+<?php
 
 $asset = \admin\assets\PublicAsset::register($this);
 

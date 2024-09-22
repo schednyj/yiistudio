@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\modules\shopcart;
 
 class ShopcartModule extends \admin\base\Module

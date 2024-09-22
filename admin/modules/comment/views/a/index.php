@@ -1,4 +1,4 @@
-<?
+<?php
 
 use kartik\grid\GridView;
 use yii\helpers\Url;
@@ -16,7 +16,7 @@ $this->title = Yii::t('admin/comment', 'Комментарии');
 <?= $this->render('_menu') ?>
 <div class="comment-index">
     <? Pjax::begin(['timeout' => 10000]); ?>
-    <?
+    <?php
     echo GridView::widget([
         'condensed' => true,
         'export' => false,

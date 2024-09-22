@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\modules\article\models;
 
 class Category extends \admin\base\CategoryModel

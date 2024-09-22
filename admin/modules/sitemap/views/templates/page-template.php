@@ -1,4 +1,4 @@
-<?
+<?php
 
 use \yii\helpers\Url;
 
@@ -31,7 +31,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>' . PHP_EOL;
                         <news:name><?= $url['news']['publication']['name'] ?></news:name>
                         <news:language><?= $url['news']['publication']['language'] ?></news:language>
                     </news:publication>
-                    <?
+                    <?php
                     echo isset($url['news']['access']) ? "<news:access>{$url['news']['access']}</news:access>" : '';
                     echo isset($url['news']['genres']) ? "<news:genres>{$url['news']['genres']}</news:genres>" : '';
                     ?>
@@ -40,7 +40,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>' . PHP_EOL;
                             $url['news']['publication_date'] : date(DATE_W3C, $url['news']['publication_date']) ?>
                     </news:publication_date>
                     <news:title> <?= $url['news']['title'] ?></news:title>
-                    <?
+                    <?php
                     echo isset($url['news']['keywords']) ?
                         "<news:keywords>{$url['news']['keywords']}</news:keywords>" : '';
                     echo isset($url['news']['stock_tickers']) ?
@@ -52,7 +52,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>' . PHP_EOL;
                 foreach ($url['images'] as $image): ?>
                     <image:image>
                         <image:loc><?= Url::to($image['loc'], true) ?></image:loc>
-                        <?
+                        <?php
                         echo isset($image['caption']) ?
                             "<image:caption>{$image['caption']}</image:caption>" : '';
                         echo isset($image['geo_location']) ?

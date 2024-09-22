@@ -1,4 +1,4 @@
-<?
+<?php
 $this->title = Yii::t('admin/news', 'Новость');
 ?>
 <?= $this->render('_menu') ?>

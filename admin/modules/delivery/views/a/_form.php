@@ -1,4 +1,4 @@
-<?
+<?php
 
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -8,7 +8,7 @@ use admin\modules\payment\models\Payment;
 
 $module = $this->context->module->id;
 ?>
-<?
+<?php
 $form = ActiveForm::begin([
             'enableAjaxValidation' => true,
             'options' => ['enctype' => 'multipart/form-data', 'class' => 'model-form']

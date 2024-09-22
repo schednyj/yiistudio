@@ -1,4 +1,4 @@
-<?
+<?php
 $this->title = Yii::t('admin/catalog', 'Создать бренд');
 ?>
 <?= $this->render('_menu') ?>

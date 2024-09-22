@@ -1,4 +1,4 @@
-<?
+<?php
 
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -38,7 +38,7 @@ $this->params['breadcrumbs'][] = $title;
 <div class="row">    
     <div class="col-md-2 col-sm-3">
         <div class="row">    
-            <?
+            <?php
             $menu_items = $category->menu('category');
             if (count($menu_items) > 0) {
                 ?>
@@ -56,13 +56,13 @@ $this->params['breadcrumbs'][] = $title;
                         ?>
                     </div> 
                 </div>   
-                <?
+                <?php
             }
             ?>
             <noindex>
                 <div class="col-ss-12 col-xs-6 col-sm-12 col-md-12">
                     <div class="border p-15 mb-20">
-                        <?
+                        <?php
                         if ($brand) {
                             $form = ActiveForm::begin(['method' => 'get', 'action' => Url::to(['/catalog', 'slug' => $category->slug . '_' . $brand->slug])]);
                         } else {
@@ -82,7 +82,7 @@ $this->params['breadcrumbs'][] = $title;
             </noindex>
             <div class="col-ss-12 <? if (count($menu_items) > 0) { ?> col-xs-12 <? } else { ?> col-xs-6 <? } ?> col-sm-12 col-md-12">
                 <div class="mb-20">
-<?
+<?php
 Slick::begin([
     'clientOptions' => [
         'autoplaySpeed' => 3000,
@@ -106,11 +106,11 @@ Slick::begin([
     ],
 ]);
 ?>
-                    <?
+                    <?php
                     foreach (Sale::last(4) as $sale) {
                         ?>
                         <?= $sale->smallBanner ?>
-                        <?
+                        <?php
                     }
                     ?>
                     <? Slick::end(); ?>

@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\modules\faq\api;
 
 use admin\base\Api;

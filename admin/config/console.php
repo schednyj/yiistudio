@@ -1,4 +1,4 @@
-<?
+<?php
 
 return [
     'id' => APP_NAME,

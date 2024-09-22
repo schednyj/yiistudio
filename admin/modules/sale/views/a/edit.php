@@ -1,4 +1,4 @@
-<?
+<?php
 $this->title = $model->title;
 ?>
 <?= $this->render('_menu') ?>

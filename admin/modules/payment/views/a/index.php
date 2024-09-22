@@ -1,4 +1,4 @@
-<?
+<?php
 
 use admin\modules\payment\models\Payment;
 use yii\helpers\Html;

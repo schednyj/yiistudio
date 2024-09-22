@@ -1,4 +1,4 @@
-<?
+<?php
 
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -20,7 +20,7 @@ $asset = ToolbarAsset::register($this);
     ])
     ?> 
 </div>
-<?
+<?php
 if (YII_DEBUG) 
     {
 ?> 
@@ -33,6 +33,6 @@ if (YII_DEBUG)
     <a class="admin-toolbar text-center" title="<?= Yii::t('admin', 'Включена отладка') ?>" style="<?= Setting::get('toolbar_position') ?>:225px;" href="<?= Url::to(['/debug']) ?>" >
         <span style="color:#FFCC33"><i class="fa fa-exclamation-triangle"></i><span>
     </a>
-<?
+<?php
     }
 ?>

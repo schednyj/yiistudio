@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\modules\guestbook\controllers;
 
 use Yii;

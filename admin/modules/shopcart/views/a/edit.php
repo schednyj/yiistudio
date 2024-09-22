@@ -1,4 +1,4 @@
-<?
+<?php
 
 use admin\modules\shopcart\models\Order;
 use yii\helpers\Html;
@@ -156,7 +156,7 @@ $("#order-status").change(function(){
     <th width="30"></th>
 </thead>
 <tbody>
-    <?
+    <?php
     $goods_total_count = 0;
     foreach ($goods as $good) {
         $goods_total_count += $good->count;
@@ -182,7 +182,7 @@ $("#order-status").change(function(){
 </table>
 <h4 class="text-right"><?= Yii::t('admin/shopcart', 'Стоимость {goods_total_count} товара(ов):', ['goods_total_count' => $goods_total_count]) ?> <?= $order->cost ?> <i class="fas fa-ruble-sign"></i></h4>
 
-<?
+<?php
 //Дополнительные данные заказа
 $str = '';
 foreach ($orderForm->attributes as $key => $value) {
@@ -206,7 +206,7 @@ foreach ($orderForm->attributes as $key => $value) {
     }
     ?>
 
-    <?
+    <?php
 }
 
 if ($str) {

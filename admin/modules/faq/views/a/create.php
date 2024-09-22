@@ -1,4 +1,4 @@
-<?
+<?php
 $this->title = Yii::t('admin/faq', 'Создать элемент');
 ?>
 <?= $this->render('_menu') ?>

@@ -1,4 +1,4 @@
-<?
+<?php
 $this->title = Yii::t('admin/file', 'Создать файл');
 ?>
 <?= $this->render('_menu') ?>

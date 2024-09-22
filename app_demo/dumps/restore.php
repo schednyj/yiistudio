@@ -1,4 +1,4 @@
-<?
+<?php
 
 
 $uploads_current = Yii::getAlias('@webroot') . DIRECTORY_SEPARATOR . 'uploads';

@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\modules\block;
 
 class BlockModule extends \admin\base\Module

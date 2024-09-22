@@ -1,4 +1,4 @@
-<?
+<?php
 
 use admin\modules\sale\models\Sale;
 use yii\helpers\Html;

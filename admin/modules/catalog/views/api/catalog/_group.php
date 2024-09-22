@@ -1,10 +1,10 @@
-<?
+<?php
 
 use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 ?>
-<?
+<?php
 if (count($group->items)) {
     $item = $group->items[0];
     ?>
@@ -23,7 +23,7 @@ if (count($group->items)) {
             <hr class="mt-5 mb-0">
             <div class="row" style="height:50px;overflow: hidden;">
                 <div class="col-md-12">
-                    <?
+                    <?php
                     $count = 0;
                     foreach ($group->items as $_item) {
                         if ($count > 2) {
@@ -35,7 +35,7 @@ if (count($group->items)) {
                                     + <?= count($group->items) - 3?>
                                 </div>
                             </a>
-                            <?
+                            <?php
                             break;
                         }
                         if ($item->id == $_item->id) {
@@ -45,7 +45,7 @@ if (count($group->items)) {
                                 <div class="square bgn-center border active" style="background-image:url('<?= $_item->thumb(45, 45) ?>');">
                                 </div>
                             </a>                                
-                            <?
+                            <?php
                         } else {
                             ?>
                             <a href="<?= Url::to(['/catalog/item', 'category' => $_item->category->slug, 'slug' => $_item->slug]) ?>" class="display-block p-5" style="width:50px;float:left;" title="<?= $_item->title ?>"
@@ -54,7 +54,7 @@ if (count($group->items)) {
                                 <div class="square bgn-center border pull-left" style="background-image:url('<?= $_item->thumb(45, 45) ?>');">
                                 </div>
                             </a>                                   
-                            <?
+                            <?php
                         }
 
                         $count++;
@@ -76,7 +76,7 @@ if (count($group->items)) {
                 <? if ($addToCartForm) { ?>
                     <div class="col-md-7 col-xs-7">
                         <? if ($item->available) { ?>
-                            <?
+                            <?php
                             $form = ActiveForm::begin(['action' => Url::to(['/shopcart/add', 'id' => $item->id]), 'options' => [
                                             'class' => 'form_add_to_cart text-right'
                             ]]);
@@ -106,6 +106,6 @@ if (count($group->items)) {
             <? } ?>            
         </div>
     </div>
-    <?
+    <?php
 }
 ?>

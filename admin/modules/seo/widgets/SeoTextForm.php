@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\modules\seo\widgets;
 
 use Yii;

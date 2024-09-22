@@ -1,4 +1,4 @@
-<?
+<?php
 
 use yii\helpers\Html;
 use admin\helpers\Image;
@@ -16,7 +16,7 @@ $this->title = $subject;
         <th>Цена</th>
         <th>Всего</th>
     </tr>
-    <?
+    <?php
     $goods_total_count = 0;
     foreach ($order->goods as $good) :
         $goods_total_count += $good->count;

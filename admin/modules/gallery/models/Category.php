@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\modules\gallery\models;
 
 use admin\models\Photo;

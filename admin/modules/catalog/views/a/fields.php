@@ -1,4 +1,4 @@
-<?
+<?php
 use yii\helpers\Html;
 use admin\modules\catalog\assets\FieldsAsset;
 use admin\modules\catalog\models\Category;

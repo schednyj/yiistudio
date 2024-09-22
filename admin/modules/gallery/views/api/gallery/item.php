@@ -1,4 +1,4 @@
-<?
+<?php
 
 use admin\modules\page\api\Page;
 use admin\modules\carousel\api\SlickLightbox;
@@ -14,7 +14,7 @@ $this->params['breadcrumbs'][] = $album->model->title;
 
 
 <? if (count($photos)) { ?>
-    <?
+    <?php
     SlickLightbox::begin([
     ]);
     ?>

@@ -1,4 +1,4 @@
-<?
+<?php
 
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -20,20 +20,20 @@ use admin\models\Setting;
     <input type="hidden" name="need-address" value="<?= $settings['need-address'] ? 'true' : 'false' ?>">
     <input type="hidden" name="successURL" value="<?= Url::to(['/shopcart/success-payment', 'id' => $order->id],true)  ?>">
     <div class="btn-group" data-toggle="buttons">
-        <?
+        <?php
         $checked = 'checked';
         $active = 'active';
         if ($settings['paymentTypeAC']) {
             ?>
             <label class="btn btn-default <?= $active ?>"><input type="radio" name="paymentType" <?= $checked ?> value="AC"><i class="fa fa-credit-card"></i> Банковской картой</label> 
-            <?
+            <?php
             $checked = '';
             $active = '';
         }
         ?>
         <? if ($settings['paymentTypePC']) { ?>
             <label class="btn btn-default <?= $active ?>"><input type="radio" name="paymentType" <?= $checked ?> value="PC"><i class="fa fa-money"></i> Яндекс.Деньгами</label>
-            <?
+            <?php
             $checked = '';
             $active = '';
         }
@@ -41,7 +41,7 @@ use admin\models\Setting;
 
         <? if ($settings['paymentTypeMC']) { ?>
             <label class="btn btn-default <?= $active ?>"><input type="radio" name="paymentType" <?= $checked ?> value="MC"><i class="fa fa-phone"></i> Со счета мобильного</label> 
-                <?
+                <?php
                 $checked = '';
                 $active = '';
             }

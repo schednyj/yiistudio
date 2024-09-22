@@ -1,4 +1,4 @@
-<?
+<?php
 
 use admin\helpers\Image;
 use kartik\datetime\DateTimePicker;
@@ -16,7 +16,7 @@ $settings = $this->context->module->settings;
 $module = $this->context->module->id;
 ?>
 
-<?
+<?php
 $form = ActiveForm::begin([
             'options' => ['enctype' => 'multipart/form-data', 'class' => 'model-form']
         ]);
@@ -31,7 +31,7 @@ $form = ActiveForm::begin([
         </div>
     </div>
 <? } ?>
-<?
+<?php
 if ($model->primaryKey) {
     ?>
     <div class="row mb-20">
@@ -46,7 +46,7 @@ if ($model->primaryKey) {
             ?>
         </div>        
     </div>
-    <?
+    <?php
 }
 ?>
 
@@ -73,7 +73,7 @@ if ($model->primaryKey) {
     <div class="col-md-2">
         <div class="col-md-12 text-right">
             <? if ($settings['itemThumb']) : ?>
-                <?
+                <?php
                 if ($model->image) {
                     ?>
                     <img src="<?= Image::thumb($model->image, 180) ?>">       

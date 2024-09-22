@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\modules\file;
 
 class FileModule extends \admin\base\Module

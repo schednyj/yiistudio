@@ -1,4 +1,4 @@
-<?
+<?php
 use yii\db\Schema;
 
 use admin\modules\faq;

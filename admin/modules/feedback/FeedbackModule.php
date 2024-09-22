@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\modules\feedback;
 
 class FeedbackModule extends \admin\base\Module

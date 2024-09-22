@@ -1,4 +1,4 @@
-<?
+<?php
 
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -29,7 +29,7 @@ $settings = Yii::$app->getModule('admin')->activeModules['catalog']->settings;
 
                 <? if (count($item->photos)) { ?>
                     <div class="row">                
-                        <?
+                        <?php
                         Slick::begin([
                             'lightbox' => true,
                             'clientOptions' => [
@@ -68,19 +68,19 @@ $settings = Yii::$app->getModule('admin')->activeModules['catalog']->settings;
                         <small class="text-muted"><?= Yii::t('admin/catalog', 'Код товара: ') . $item->key ?></small>
                     </div> 
                     <div class="col-md-7 col-sm-7 col-xs-7 text-right">
-                        <?
+                        <?php
                         if ($settings['enableRating']) {
                             ?>
                             <div class="row">		
                                 <div class="col-md-12">
-                                    <?
+                                    <?php
                                     echo admin\modules\comment\widgets\Rating::widget([
                                         'model' => $item,
                                     ]);
                                     ?>
                                 </div>
                             </div> 
-                            <?
+                            <?php
                         }
                         ?>
                     </div>
@@ -99,7 +99,7 @@ $settings = Yii::$app->getModule('admin')->activeModules['catalog']->settings;
                 </div>
                 <div class="row mb-20">
                     <? if ($item->available) { ?>
-                        <?
+                        <?php
                         $form = ActiveForm::begin(['action' => Url::to(['/shopcart/add', 'id' => $item->id]), 'options' => [
                                         'class' => 'form_add_to_cart'
                         ]]);
@@ -145,7 +145,7 @@ $settings = Yii::$app->getModule('admin')->activeModules['catalog']->settings;
                         </div>  
                     <? } ?>
                 </div>
-                <?
+                <?php
                 if (count($group->items) > 1) {
                     ?>
                     <div class="row mb-20">
@@ -155,7 +155,7 @@ $settings = Yii::$app->getModule('admin')->activeModules['catalog']->settings;
                     </div>
                     <div class="row mb-20">
                         <div class="col-md-12">
-                            <?
+                            <?php
                             foreach ($group->items as $_item) {
                                 if ($item->id == $_item->id) {
                                     ?>
@@ -163,20 +163,20 @@ $settings = Yii::$app->getModule('admin')->activeModules['catalog']->settings;
                                         <div class="square bgn-center border active" style="background-image:url('<?= $_item->thumb(90, 90) ?>');">
                                         </div>
                                     </a>                                
-                                    <?
+                                    <?php
                                 } else {
                                     ?>
                                     <a href="<?= Url::to(['/catalog/item', 'category' => $_item->category->slug, 'slug' => $_item->slug]) ?>" class="display-block p-5" style="width:90px;display:block;float:left;" title="<?= $_item->title ?>">
                                         <div class="square bgn-center border pull-left" style="background-image:url('<?= $_item->thumb(90, 90) ?>');">
                                         </div>
                                     </a>                                   
-                                    <?
+                                    <?php
                                 }
                             }
                             ?>
                         </div>                    
                     </div>
-                    <?
+                    <?php
                 }
                 ?>
                 <div class="row mb-10">
@@ -249,12 +249,12 @@ $settings = Yii::$app->getModule('admin')->activeModules['catalog']->settings;
         </p>        
     </div>
 </div>
-<?
+<?php
 if ($settings['enableComment']) {
     ?>
     <div class="row">		
         <div class="col-md-12">
-            <?
+            <?php
             echo admin\modules\comment\widgets\Comment::widget([
                 'model' => $item,
                 'dataProviderConfig' => [
@@ -266,15 +266,15 @@ if ($settings['enableComment']) {
             ?>
         </div>
     </div>  
-    <?
+    <?php
 }
 ?>
-<?
+<?php
 if ($settings['enableLastViewed']) {
     ?>
     <div class="row">		
         <div class="col-md-12">
-            <?
+            <?php
             echo admin\modules\catalog\widgets\LastViewed::widget([
                 'currentViewedSlug' => $item->slug,
                 'addToCartForm' => $addToCartForm,
@@ -282,6 +282,6 @@ if ($settings['enableLastViewed']) {
             ?>
         </div>
     </div>  
-    <?
+    <?php
 }
 ?>

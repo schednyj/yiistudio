@@ -1,4 +1,4 @@
-<?
+<?php
 
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
@@ -9,7 +9,7 @@ $this->title = Yii::t('admin', 'Вход');
 
 <h4><?= Yii::t('admin', 'Вход') ?></h4>
 <br>
-<?
+<?php
 $form = ActiveForm::begin([
             'fieldConfig' => [
                 'template' => "{beginWrapper}\n{input}\n{hint}\n{error}\n{endWrapper}"

@@ -1,4 +1,4 @@
-<?
+<?php
 
 use yii\data\ArrayDataProvider;
 use yii\grid\GridView;
@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a(Yii::t('admin', 'Добавить роль'), ['role-add'], ['class' => 'btn btn-success']) ?>
     </p>
-    <?
+    <?php
     $dataProvider = new ArrayDataProvider([
         'allModels' => Yii::$app->authManager->getRoles(),
         'sort' => [

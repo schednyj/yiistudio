@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\behaviors;
 
 use yii\db\ActiveRecord;

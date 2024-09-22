@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\modules\catalog\assets;
 
 class FieldsAsset extends \yii\web\AssetBundle

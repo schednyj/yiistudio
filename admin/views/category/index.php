@@ -1,4 +1,4 @@
-<?
+<?php
 use admin\base\CategoryModel;
 use yii\helpers\Url;
 

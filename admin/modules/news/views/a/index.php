@@ -1,4 +1,4 @@
-<?
+<?php
 
 use admin\modules\news\models\News;
 use yii\helpers\Html;

@@ -1,4 +1,4 @@
-<?
+<?php
 $this->title = Yii::t('admin', 'Создать пользователя');
 ?>
 <?= $this->render('_menu') ?>

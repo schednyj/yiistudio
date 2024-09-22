@@ -1,4 +1,4 @@
-<?
+<?php
 use yii\helpers\Url;
 
 $this->title = Yii::t('admin/subscribe', 'E-mail рассылка');

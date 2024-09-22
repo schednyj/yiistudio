@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\assets;
 
 class DateTimePickerAsset extends \yii\web\AssetBundle

@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\assets;
 
 class PhotosAsset extends \yii\web\AssetBundle

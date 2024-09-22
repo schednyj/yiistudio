@@ -1,4 +1,4 @@
-<?
+<?php
 
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -16,7 +16,7 @@ $this->params['description'] = $page->seo('description');
 $this->params['keywords'] = $page->seo('keywords');
 ?>
 <div class="row pl-30 pr-30 mb-30" style="height:180px;overflow: hidden;">
-    <?
+    <?php
     Slick::begin([
         'clientOptions' => [
             'breakpoints' => 800,
@@ -39,7 +39,7 @@ $this->params['keywords'] = $page->seo('keywords');
     ]);
     ?>
 
-    <?
+    <?php
     $category = Catalog::category();
     foreach ($category->brands() as $brand) {
         if ($brand->image) {
@@ -52,7 +52,7 @@ $this->params['keywords'] = $page->seo('keywords');
                     <a href="<?= Url::to(['/brand', 'slug' => $brand->slug]) ?>"><?= Html::img($brand->thumb(180, 180), ['class' => 'pull-right']) ?></a>
                 </div>
             </div>
-            <?
+            <?php
         }
     }
     ?>
@@ -127,7 +127,7 @@ $this->params['keywords'] = $page->seo('keywords');
                     <div class="col-md-12">
                         <div class="sidebar-header sidebar-header-lg"><a href="<?= Url::to(['/catalog', 'slug' => 'smartfony_apple']) ?>"><?= Yii::t('app', 'Apple iPhone') ?></a></div>
                         <div class="row"> 
-                            <?
+                            <?php
                             $counter = 0;
                             $last = false;
                             foreach (Catalog::items_last(4, ['brand_id' => 2, 'category_id' => 2]) as $item) {
@@ -144,7 +144,7 @@ $this->params['keywords'] = $page->seo('keywords');
                 <div class="sidebar-header sidebar-header-lg"><?= Yii::t('app', 'Новинки') ?></div>                
                 <div class="row"> 
                     <? foreach (Catalog::groups_last(4) as $group) : ?>            
-                        <?
+                        <?php
                         echo $this->render('@admin/modules/catalog/views/api/catalog/_group', ['group' => $group, 'addToCartForm' => new \app_demo\models\AddToCartForm()])
                         ?>
                     <? endforeach; ?>

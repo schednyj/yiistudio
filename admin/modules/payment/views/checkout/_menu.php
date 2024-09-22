@@ -1,4 +1,4 @@
-<?
+<?php
 use yii\helpers\Url;
 
 $action = $this->context->action->id;

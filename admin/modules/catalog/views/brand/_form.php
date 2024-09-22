@@ -1,4 +1,4 @@
-<?
+<?php
 
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -7,7 +7,7 @@ use yii\widgets\ActiveForm;
 use admin\modules\seo\widgets\SeoTextForm;
 use admin\widgets\Redactor;
 ?>
-<?
+<?php
 $form = ActiveForm::begin([
             'enableAjaxValidation' => true,
             'options' => ['class' => 'model-form']

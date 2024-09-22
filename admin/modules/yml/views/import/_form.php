@@ -1,4 +1,4 @@
-<?
+<?php
 
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -7,7 +7,7 @@ use admin\modules\yml\YmlModule;
 
 $module = $this->context->module->id;
 ?>
-<?
+<?php
 $form = ActiveForm::begin([
             'enableAjaxValidation' => true,
             'options' => ['class' => 'model-form']
@@ -71,7 +71,7 @@ $form = ActiveForm::begin([
     <div class="col-sm-6">
         <div class="form-group field-esumki-title required">
             <label class="control-label">Столбцы в excel</label><br>
-            <?
+            <?php
             $count = 0;
             foreach (YmlModule::getFields() as $field) {
                 $count++;

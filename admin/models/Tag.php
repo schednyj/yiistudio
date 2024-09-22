@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\models;
 
 class Tag extends \admin\base\ActiveRecord

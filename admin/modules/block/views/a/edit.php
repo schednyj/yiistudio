@@ -1,4 +1,4 @@
-<?
+<?php
 $this->title = Yii::t('admin/block', 'Редактировать HTML-блок');
 ?>
 <?= $this->render('_menu') ?>

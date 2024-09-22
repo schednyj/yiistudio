@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\modules\article\controllers;
 
 use Yii;

@@ -1,4 +1,4 @@
-<?
+<?php
 
 use admin\modules\page\api\Page;
 use admin\modules\payment\api\Payment;
@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </tr>
     </thead>
     <tbody>
-        <?
+        <?php
         $goods_total_count = 0;
         foreach ($order->goods as $good) :
             $goods_total_count += $good->count;
@@ -68,26 +68,26 @@ $this->params['breadcrumbs'][] = $this->title;
             <table class="table">
                 <tbody>
                     <tr>
-                        <?
+                        <?php
                         foreach ($order->data as $array_key => $array) {
                             ?>
 
                             <td><span class="text-muted"><?= $orderForm->getAttributeLabel($array_key) ?></span><br>
-                                <?
+                                <?php
                                 foreach ($array as $value_key => $value) {
                                     ?>
-                                    <br><?
+                                    <br><?php
                                     if ($value != '') {
                                         echo $value;
                                     } else {
                                         echo '-';
                                     }
                                     ?>
-                                    <?
+                                    <?php
                                 }
                                 ?>
                             </td>
-                            <?
+                            <?php
                         }
                         ?>
                     </tr>  

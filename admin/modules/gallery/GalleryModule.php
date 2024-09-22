@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\modules\gallery;
 
 class GalleryModule extends \admin\base\Module

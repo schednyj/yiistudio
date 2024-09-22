@@ -1,4 +1,4 @@
-<?
+<?php
 use admin\modules\faq\api\Faq;
 use admin\modules\page\api\Page;
 

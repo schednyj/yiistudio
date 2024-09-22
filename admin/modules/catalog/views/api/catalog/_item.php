@@ -1,4 +1,4 @@
-<?
+<?php
 
 use yii\helpers\Url;
 use yii\helpers\Html;
@@ -30,7 +30,7 @@ use yii\widgets\ActiveForm;
             <? if ($addToCartForm) { ?>
                 <div class="col-md-7 col-xs-7">
                     <? if ($item->available) { ?>
-                        <?
+                        <?php
                         $form = ActiveForm::begin(['action' => Url::to(['/shopcart/add', 'id' => $item->id]), 'options' => [
                                         'class' => 'form_add_to_cart text-right'
                         ]]);

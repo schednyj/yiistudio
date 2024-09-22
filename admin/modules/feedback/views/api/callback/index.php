@@ -1,4 +1,4 @@
-<?
+<?php
 
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -6,7 +6,7 @@ use yii\widgets\ActiveForm;
 use yii\web\View;
 ?>
 
-<?
+<?php
 $form = ActiveForm::begin([
             'id' => 'callback-form',
             'enableClientValidation' => true,
@@ -17,7 +17,7 @@ $form = ActiveForm::begin([
 <?= $form->field($model, 'phone') ?>
 <?= Html::submitButton(Yii::t('admin', 'Отправить'), ['class' => 'btn btn-primary']) ?>
 <? ActiveForm::end(); ?>
-<?
+<?php
 
 $js = <<<SCRIPT
 _g_ajax_form_submit("#callback-form", {func: function (data) { $("#modal").find("#modalContent").html(data.text); }});

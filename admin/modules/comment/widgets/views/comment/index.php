@@ -1,4 +1,4 @@
-<?
+<?php
 
 use yii\helpers\ArrayHelper;
 use yii\widgets\ListView;
@@ -25,7 +25,7 @@ use yii\helpers\Url;
                 </h3>
                 <div class="title-separator"></div>
             </div>
-            <?
+            <?php
             echo ListView::widget(ArrayHelper::merge(
                             [
                         'dataProvider' => $commentDataProvider,
@@ -45,7 +45,7 @@ use yii\helpers\Url;
             ));
             ?>
             <? if (!Yii::$app->user->isGuest) { ?>
-                <?
+                <?php
                 echo $this->render('_form', [
                     'commentModel' => $commentModel,
                     'formId' => $formId,

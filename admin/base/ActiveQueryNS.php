@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\base;
 
 use creocoder\nestedsets\NestedSetsQueryBehavior;

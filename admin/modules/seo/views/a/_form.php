@@ -1,9 +1,9 @@
-<?
+<?php
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 ?>
-<?
+<?php
 $form = ActiveForm::begin([
             'enableAjaxValidation' => true,
             'options' => ['class' => 'model-form']

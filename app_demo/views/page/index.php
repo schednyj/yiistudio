@@ -1,4 +1,4 @@
-<?
+<?php
 use admin\modules\page\api\Page;
 
 $page = Page::get('page-opt');

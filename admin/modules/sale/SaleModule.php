@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\modules\sale;
 
 class SaleModule extends \admin\base\Module

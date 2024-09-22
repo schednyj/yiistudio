@@ -1,4 +1,4 @@
-<?
+<?php
 
 use yii\bootstrap\BootstrapPluginAsset;
 use yii\helpers\Html;

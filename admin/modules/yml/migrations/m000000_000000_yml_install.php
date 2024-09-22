@@ -1,4 +1,4 @@
-<?
+<?php
 use yii\db\Schema;
 
 class m000000_000000_yml_install extends \yii\db\Migration

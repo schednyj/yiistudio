@@ -1,4 +1,4 @@
-<?
+<?php
 
 use admin\modules\sale\api\Sale;
 use admin\modules\page\api\Page;

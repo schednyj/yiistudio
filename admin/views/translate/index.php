@@ -1,4 +1,4 @@
-<?
+<?php
 
 use yii\helpers\Url;
 
@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= Yii::t('admin', 'Команда') . ':' ?>
     <div class="alert-console p-20">
             ./yii message @admin/config/messages.php<br>
-            <?
+            <?php
             foreach (Yii::$app->getModule('admin')->activeModules as $name => $module) {
                 $message_config = '@admin/modules/' . $name . '/messages/config.php';
                 if (file_exists(Yii::getAlias($message_config))) {

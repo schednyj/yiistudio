@@ -1,4 +1,4 @@
-<?
+<?php
 use admin\widgets\Photos;
 
 $this->title = $model->title;

@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\modules\carousel\api;
 
 use admin\base\Api;

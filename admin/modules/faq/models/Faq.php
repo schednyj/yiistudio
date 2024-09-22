@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\modules\faq\models;
 
 use Yii;

@@ -1,4 +1,4 @@
-<?
+<?php
 
 use admin\helpers\Image;
 use yii\helpers\Html;
@@ -12,14 +12,14 @@ use kartik\datetime\DateTimePicker;
 $class = $this->context->categoryClass;
 $settings = $this->context->module->settings;
 ?>
-<?
+<?php
 $form = ActiveForm::begin([
             'enableAjaxValidation' => true,
             'options' => ['enctype' => 'multipart/form-data']
         ]);
 ?>
 <?= $form->field($model, 'title') ?>
-<?
+<?php
 $parents = [];
 if ($model->id) {
     $parents = $class::find()->where(['<>', 'id', $model->id])->sort()->asArray()->all();

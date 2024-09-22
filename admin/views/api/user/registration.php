@@ -1,4 +1,4 @@
-<?
+<?php
 /* @var $this yii\web\View */
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $registrationForm \frontend\models\RegistrationForm */
@@ -20,29 +20,29 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="col-lg-5">
             <? $form = ActiveForm::begin(['id' => 'form-registration']); ?>
 
-            <?
+            <?php
             $first = true;
             foreach ($registrationForm->attributes as $key => $value) {
                 ?>
                 <? if ($key == 'email') { ?>
                     <?= $form->field($registrationForm, 'email')->textInput(['autofocus' => $first]) ?>
-                    <?
+                    <?php
                 } elseif ($key == 'password') {
                     if (!Setting::get('generatePasswordRegistration')) {
                         ?>
                         <?= $form->field($registrationForm, 'password')->passwordInput(['autofocus' => $first]) ?>
-                        <?
+                        <?php
                     }
                 } elseif ($key == 'reCaptcha') {
                     if (Setting::get('enableCaptchaRegistration')) {
                         ?>       
                         <?= $form->field($registrationForm, 'reCaptcha')->widget(ReCaptcha::className()); ?>
-                        <?
+                        <?php
                     }
                 } else {
                     ?>    
                     <?= $form->field($registrationForm, $key)->textInput(['autofocus' => $first]) ?>
-                    <?
+                    <?php
                 }
                 $first = false;
             }

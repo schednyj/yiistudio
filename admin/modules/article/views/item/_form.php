@@ -1,4 +1,4 @@
-<?
+<?php
 
 use admin\helpers\Image;
 use kartik\datetime\DateTimePicker;
@@ -11,7 +11,7 @@ use admin\modules\seo\widgets\SeoTextForm;
 
 $module = $this->context->module->id;
 ?>
-<?
+<?php
 $form = ActiveForm::begin([
             'enableAjaxValidation' => true,
             'options' => ['enctype' => 'multipart/form-data', 'class' => 'model-form']

@@ -1,4 +1,4 @@
-<?
+<?php
 
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -69,7 +69,7 @@ $moduleName = $this->context->module->id;
                         <li class="header text-uppercase"><?= Yii::t('admin', 'Модули') ?></li>
                         <? foreach (Yii::$app->getModule('admin')->activeModules as $module) { ?>
 
-                            <?
+                            <?php
                                 //Проверяем права по AuthManager
                                 if (!Yii::$app->user->can('admin/' . $module->name)) {
                                     continue;
@@ -92,15 +92,15 @@ $moduleName = $this->context->module->id;
                                         </span>
                                     <? endif; ?>
                                 </a>
-                                <?
+                                <?php
                                 if (is_array($module->settings['__submenu_module'])) {
                                     ?>
                                     <ul class="treeview-menu">
-                                        <?
+                                        <?php
                                         foreach ($module->settings['__submenu_module'] as $submenu) {
                                             ?>
                                             <li class="<?= (($moduleName == $module->name && $this->context->id == $submenu['id']) ? 'active' : '') ?>"><a href="<?= $submenu['url'] ?>"><i class="fa fa-circle"></i><?= $submenu['label'] ?></a></li> 
-                                            <?
+                                            <?php
                                         }
                                         ?>
                                     </ul>
@@ -177,11 +177,11 @@ $moduleName = $this->context->module->id;
                     </div>                    
                     <div class="row">
                         <div class="col-sm-12">
-                            <?
+                            <?php
                             if (isset($this->params['complex_page'])) {
                                 ?>
                                 <?= $content ?>
-                                <?
+                                <?php
                             } else {
                                 ?>
                                 <div class="box">
@@ -189,7 +189,7 @@ $moduleName = $this->context->module->id;
                                         <?= $content ?>
                                     </div>
                                 </div>
-                                <?
+                                <?php
                             }
                             ?>
                         </div>

@@ -1,4 +1,4 @@
-<?
+<?php
 
 use yii\bootstrap\ActiveForm;
 use yii\bootstrap\Html;
@@ -10,7 +10,7 @@ $this->title = Yii::t('admin', 'Восстановить');
 <b><?= Yii::t('admin', 'Восстановить') . ': ' . $file ?></b>
 <br>
 <br>
-<?
+<?php
 $form = ActiveForm::begin([
             'action' => ['restore', 'id' => $id],
             'method' => 'post',

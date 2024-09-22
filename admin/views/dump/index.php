@@ -1,4 +1,4 @@
-<?
+<?php
 
 use yii\bootstrap\ActiveForm;
 use yii\bootstrap\Html;
@@ -10,7 +10,7 @@ $this->title = Yii::t('admin', 'Бэкапы');
 
 <br>
 <br>
-<?
+<?php
 $form = ActiveForm::begin([
             'action' => ['create'],
             'method' => 'post',

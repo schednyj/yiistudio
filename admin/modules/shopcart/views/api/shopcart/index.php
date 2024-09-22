@@ -1,4 +1,4 @@
-<?
+<?php
 
 use admin\modules\page\api\Page;
 use admin\modules\shopcart\api\Shopcart;
@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $page->title;
                     </tr>
                 </thead>
                 <tbody>
-                    <?
+                    <?php
                     $goods_total_count = 0;
                     foreach ($goods as $good) :
                         $goods_total_count += $good->count;

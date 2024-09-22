@@ -1,4 +1,4 @@
-<?
+<?php
 
 use admin\helpers\Image;
 use admin\models\Photo;
@@ -38,7 +38,7 @@ $photoTemplate = '<tr data-id="{{id}}"><td>{{id}}</td>\
 <script>
     var photoTemplate = '<?=$photoTemplate?>';
 </script>
-<?
+<?php
 
 
 

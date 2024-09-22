@@ -1,4 +1,4 @@
-<?
+<?php
 
 $config = [
     'id' => APP_NAME,

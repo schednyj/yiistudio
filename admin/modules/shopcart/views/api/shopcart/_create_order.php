@@ -1,4 +1,4 @@
-<?
+<?php
 
 use admin\modules\shopcart\api\Shopcart;
 use admin\modules\delivery\api\Delivery;
@@ -32,10 +32,10 @@ if (Yii::$app->session->has('shopcartUserInputData')) {
 $deliveries = Delivery::items(['shopcart_cost' => Shopcart::cost()]);
 ?>
 
-<?
+<?php
 $form = ActiveForm::begin(['action' => Url::to(['/shopcart/create']), 'id' => 'shopcart_create', 'enableClientValidation' => true]);
 ?>
-<?
+<?php
 if (count($deliveries)) {
     //Проверяем существует ли служба доставки сохраненная в сессии
     if (!$deliveries[$delivery_slug]) {
@@ -60,7 +60,7 @@ if (count($deliveries)) {
                 <tbody>
                     <tr>
                         <td>
-                            <?
+                            <?php
                             $need_address = false;
                             $delivery_price = 0;
                             foreach ($deliveries as $delivery) {
@@ -79,7 +79,7 @@ if (count($deliveries)) {
                                                data-price="<?= $free_delivery ? '0' : $delivery->price ?>"
                                                data-free-from="<?= $delivery->free_from ?>"
                                                data-need-address="<?= $delivery->need_address ?>"
-                                               <?
+                                               <?php
                                                if ($delivery_slug == $delivery->slug) {
                                                    $need_address = $delivery->need_address;
                                                    if (!$free_delivery) {
@@ -100,7 +100,7 @@ if (count($deliveries)) {
                                         <?= $delivery->description ?>
                                     </div>
                                 </div>
-                                <?
+                                <?php
                             }
                             ?>
                         </td>
@@ -116,18 +116,18 @@ if (count($deliveries)) {
                 <tbody>
                     <tr>
                         <td>
-                            <?
+                            <?php
                             foreach ($deliveries as $delivery) {
                                 $checked = true;
                                 ?>
-                                <div id="shopcart_delivery_payment_<?= $delivery->id; ?>" class="shopcart_delivery_payment_div" style="display:<?
+                                <div id="shopcart_delivery_payment_<?= $delivery->id; ?>" class="shopcart_delivery_payment_div" style="display:<?php
                                 if ($delivery_slug == $delivery->slug) {
                                     echo 'block';
                                 } else {
                                     echo 'none';
                                 }
                                 ?>">
-                                         <?
+                                         <?php
                                          foreach ($delivery->payments as $payment) {
                                              ?>
                                         <div class="radio">
@@ -135,7 +135,7 @@ if (count($deliveries)) {
                                                 <input type="radio" name="payment_id[<?= $delivery->id ?>]" id="payment_<?= $delivery->id ?>_<?= $payment->id ?>"
                                                        value="<?= $payment->id ?>"
                                                        data-slug="<?= $payment->slug ?>"
-                                                       <?
+                                                       <?php
                                                        if ($delivery->slug == $delivery_slug) {
                                                            if ($payment->slug == $payment_slug) {
                                                                echo 'checked';
@@ -153,11 +153,11 @@ if (count($deliveries)) {
                                                 <?= $payment->description ?>
                                             </div>
                                         </div>
-                                        <?
+                                        <?php
                                     }
                                     ?>
                                 </div>
-                                <?
+                                <?php
                             }
                             ?>
                         </td>
@@ -177,7 +177,7 @@ if (count($deliveries)) {
                 <tbody>
                     <tr>
                         <td>
-                            <?
+                            <?php
                             echo $form->field($orderForm, 'name')->label(Yii::t('admin/shopcart', 'Ваше имя'));
                             echo $form->field($orderForm, 'phone')->label(Yii::t('admin/shopcart', 'Телефон'));;
                             if ($need_address) {
@@ -200,13 +200,13 @@ if (count($deliveries)) {
     </div>
     <div class="row">
         <div class="col-md-7">
-            <?
+            <?php
             if (Yii::$app->user->isGuest && $fast != true) {
                 ?>        
                 <noindex>
                     <?= Yii::t('admin/shopcart', 'Чтобы отслеживать состояние заказов, получать персональные скидки, участвовать в акциях, оплачивать заказы онлайн, нужно') ?> <a rel="nofollow" href="javascript:void(0);" title="<?= Yii::t('admin', 'Войти в личный кабинет') ?>" data-url="<?= Url::to(['/user/login']) ?>" class="dotted ajaxModalPopup"><?= Yii::t('admin', 'войти в личный кабинет') ?></a> <?= Yii::t('admin', 'или') ?> <a rel="nofollow" href="javascript:void(0);" title="<?= Yii::t('admin', 'Зарегистрироваться') ?>" data-url="<?= Url::to(['/user/registration']) ?>" class="dotted ajaxModalPopup"><?= Yii::t('admin', 'зарегистрироваться') ?></a>.
                 </noindex>
-                <?
+                <?php
             }
             ?>
         </div>
@@ -216,7 +216,7 @@ if (count($deliveries)) {
             <?= Html::submitButton(Yii::t('admin/shopcart', 'Оформить заказ'), ['class' => 'btn btn-success btn-lg']); ?>
         </div>
     </div>
-    <?
+    <?php
 } else {
     ?>
     <div class="row">
@@ -228,10 +228,10 @@ if (count($deliveries)) {
         </div>
     </div>
 <? } ?>
-<?
+<?php
 ActiveForm::end();
 ?>
-<?
+<?php
 $js = <<<SCRIPT
 $(".shopcart_delivery_radio").change(function () {
     $(".shopcart_delivery_payment_div").hide();

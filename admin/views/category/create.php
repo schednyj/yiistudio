@@ -1,4 +1,4 @@
-<?
+<?php
 $this->title = Yii::t('admin', 'Создать категорию');
 ?>
 <?= $this->render('_menu') ?>

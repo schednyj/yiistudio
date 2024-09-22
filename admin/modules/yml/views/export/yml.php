@@ -1,4 +1,4 @@
-<?
+<?php
 
 use yii\helpers\Url;
 use admin\modules\yml\YmlModule;
@@ -34,11 +34,11 @@ $marketcategories = [];
                 <offer id="<?= $item->id ?>" type="vendor.model" available="<?= $item->available ? 'true' : 'false'; ?>">
                     <url><?= $item->url ?></url>
                     <price><?= $item->price ?></price>
-                    <?
+                    <?php
                     if ($item->old_price > $item->price) {
                         ?>
                         <oldprice><?= $item->old_price ?></oldprice>
-                        <?
+                        <?php
                     }
                     ?>
                     <currencyId><?= 'RUB' ?></currencyId>
@@ -46,13 +46,13 @@ $marketcategories = [];
                     <store>true</store>
                     <pickup>true</pickup>
                     <delivery>true</delivery>
-                    <?
+                    <?php
                     if ($item->price < $model->delivery_free_from) {
                         ?>
                         <delivery-options>
                             <option cost="<?= $model->delivery_options_cost ?>" days="<?= $model->delivery_options_days ?>"/>
                         </delivery-options>
-                        <?
+                        <?php
                     }
                     ?>
                     <? foreach ($item->photos as $photo) { ?>
@@ -63,13 +63,13 @@ $marketcategories = [];
                     <vendor><?= $item->brand ?></vendor>
                     <market_category><?= $item->marketcategory ?></market_category>
                     <description><?= htmlspecialchars(strip_tags($item->description)); ?></description>
-                    <?
+                    <?php
                     //Доп.параметры   
                     foreach (YmlModule::getAdditionalFields(true) as $field) {
                         if (!empty($item->data[$field['attribute']])) {
                             ?>
                             <param name="<?= $field['header'] ?>"><?= htmlspecialchars(strip_tags($item->data[$field['attribute']])) ?></param>
-                            <?
+                            <?php
                         }
                     }
                     ?>                 

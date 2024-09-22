@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\modules\carousel\models;
 
 use Yii;

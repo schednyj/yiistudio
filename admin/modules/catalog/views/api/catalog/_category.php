@@ -1,4 +1,4 @@
-<?
+<?php
 
 use admin\widgets\Sort;
 use admin\widgets\PageSize;

@@ -1,4 +1,4 @@
-<?
+<?php
 
 use admin\modules\shopcart\models\News;
 use admin\modules\shopcart\models\Order;

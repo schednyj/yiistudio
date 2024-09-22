@@ -1,4 +1,4 @@
-<?
+<?php
 
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $brand->title;
 <div class="row">
     <div class="col-md-2 col-sm-3">
         <div class="row">  
-            <?
+            <?php
             foreach ($brand->categories() as $category) {
                 $menu_items[] = ['label' => $category->title . ' ' . $brand->title, 'url' => Url::to(['/catalog', 'slug' => $category->slug . '_' . $brand->slug])];
             }
@@ -40,7 +40,7 @@ $this->params['breadcrumbs'][] = $brand->title;
                         ?>
                     </div> 
                 </div>
-                <?
+                <?php
             }
             ?>
             <noindex>

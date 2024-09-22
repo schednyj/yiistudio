@@ -1,4 +1,4 @@
-<?
+<?php
 
 use yii\helpers\Url;
 use admin\modules\carousel\api\SlickLightbox;
@@ -14,7 +14,7 @@ $this->params['breadcrumbs'][] = $sale->title;
 <?= $sale->text ?>
 <? if (count($sale->photos)) : ?>
     <p>
-        <?
+        <?php
         SlickLightbox::begin([
         ]);
         ?>

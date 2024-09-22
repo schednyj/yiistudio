@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\helpers;
 
 use Yii;

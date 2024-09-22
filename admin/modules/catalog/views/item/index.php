@@ -1,4 +1,4 @@
-<?
+<?php
 
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -164,7 +164,7 @@ GridView::widget([
         <?= GridSelectedRowsAction::widget(['grid_id' => 'grid_item', 'buttonOptions' => ['class' => 'btn btn-danger btn-block', 'content' => '<i class="fa fa-times"></i> ' . Yii::t('admin', 'Удалить отмеченные'), 'title' => Yii::t('admin', 'Удалить отмеченные')], 'action' => Url::to(['/admin/catalog/item/delete-json'])]); ?>
     </div>   
     <div class="col-md-2">
-        <?
+        <?php
         $params = array_merge([0 => '/admin/catalog/item/export-to-excel'], Yii::$app->request->get());
         ?>
         <a class="btn btn-success pull-left" href="<?= Url::to($params) ?>"><i class="fa fa-fw fa-download"></i> <?= Yii::t('admin/catalog', 'Выгрузить категорию в Excel') ?></a>

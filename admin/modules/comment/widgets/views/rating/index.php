@@ -1,10 +1,10 @@
-<?
+<?php
 
 use yii\widgets\Pjax;
 ?>
 <div class="rating-wrapper" id="<? echo $ratingWrapperId; ?>">
     <? Pjax::begin(['enablePushState' => false, 'timeout' => 20000, 'id' => $pjaxContainerId]); ?>
-    <?
+    <?php
     $ratingsCount = $ratingModel->getRatingsCount();
     if ($ratingsCount > 0) {
         $rating = $rating / $ratingsCount;
@@ -14,7 +14,7 @@ use yii\widgets\Pjax;
     <? if ($ratingsCount > 0) { ?>
         <span style="display: inline-block"><?= '<span class="c-first">(' . Yii::$app->formatter->asDecimal($rating, 1) . ')</span> ' . Yii::t('admin/comment', 'На основе {0} отзывов', $ratingsCount); ?></span>
     <? } ?>
-    <?
+    <?php
         echo $this->render('_form', [
             'ratingModel' => $ratingModel,
             'formId' => $formId,

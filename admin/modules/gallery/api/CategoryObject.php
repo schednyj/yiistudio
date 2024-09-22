@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\modules\gallery\api;
 
 use yii\data\ActiveDataProvider;

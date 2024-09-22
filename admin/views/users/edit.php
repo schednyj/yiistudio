@@ -1,4 +1,4 @@
-<?
+<?php
 $this->title = Yii::t('admin', 'Редактировать пользователя');
 ?>
 <?= $this->render('_menu') ?>

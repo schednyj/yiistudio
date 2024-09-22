@@ -1,4 +1,4 @@
-<?
+<?php
 use admin\assets\AdminLteAsset;
 use admin\assets\PublicAsset;
 

@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\modules\guestbook;
 
 class GuestbookModule extends \admin\base\Module

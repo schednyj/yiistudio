@@ -1,4 +1,4 @@
-<?
+<?php
 $this->title = Yii::t('admin/carousel', 'Создать элемент карусели');
 ?>
 <?= $this->render('_menu') ?>

@@ -1,4 +1,4 @@
-<?
+<?php
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
@@ -6,7 +6,7 @@ use admin\widgets\Redactor;
 
 $action = $this->context->action->id;
 ?>
-<?
+<?php
 
 $form = ActiveForm::begin([
             'enableClientValidation' => true

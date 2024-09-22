@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\models\api;
 
 use yii\base\Model;

@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\modules\delivery;
 
 class DeliveryModule extends \admin\base\Module

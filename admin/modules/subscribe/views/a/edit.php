@@ -1,4 +1,4 @@
-<?
+<?php
 use yii\helpers\Html;
 use yii\helpers\Url;
 use admin\modules\subscribe\models\History;

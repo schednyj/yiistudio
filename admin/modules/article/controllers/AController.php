@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\modules\article\controllers;
 
 class AController extends \admin\base\admin\CategoryController

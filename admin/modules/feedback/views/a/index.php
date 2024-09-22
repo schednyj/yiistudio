@@ -1,4 +1,4 @@
-<?
+<?php
 
 use yii\helpers\StringHelper;
 use yii\helpers\Url;

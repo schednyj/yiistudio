@@ -1,4 +1,4 @@
-<?
+<?php
 if(count($items)){
 ?>
 <div class="row mb-15">
@@ -9,7 +9,7 @@ if(count($items)){
                 </h3>
                 <div class="title-separator"></div>
             </div>
-            <?
+            <?php
             $counter = 0;
             $last = false;
             foreach ($items as $item) {
@@ -22,6 +22,6 @@ if(count($items)){
             <? } ?>
     </div>
 </div>
-<?
+<?php
 }
 ?>

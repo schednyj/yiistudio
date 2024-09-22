@@ -1,4 +1,4 @@
-<?
+<?php
 
 use admin\modules\page\api\Page;
 use admin\modules\shopcart\api\Shopcart;

@@ -1,4 +1,4 @@
-<?
+<?php
 
 use admin\modules\delivery\models\Delivery;
 use yii\helpers\Html;

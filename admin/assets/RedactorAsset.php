@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\assets;
 
 class RedactorAsset extends \yii\web\AssetBundle

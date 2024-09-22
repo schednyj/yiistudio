@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\assets;
 
 class PublicAsset extends \yii\web\AssetBundle

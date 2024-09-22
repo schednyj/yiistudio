@@ -1,4 +1,4 @@
-<?
+<?php
 namespace admin\assets;
 
 class AnimateAsset extends \yii\web\AssetBundle

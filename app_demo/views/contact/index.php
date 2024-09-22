@@ -1,4 +1,4 @@
-<?
+<?php
 
 use admin\modules\feedback\api\Feedback;
 use admin\modules\page\api\Page;

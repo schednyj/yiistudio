@@ -1,4 +1,4 @@
-<?
+<?php
 $this->title = Yii::t('admin/catalog', 'Добавить элемент');
 ?>
 <?= $this->render('_menu', ['category' => $category]) ?>

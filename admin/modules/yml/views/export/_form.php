@@ -1,4 +1,4 @@
-<?
+<?php
 
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -14,7 +14,7 @@ AdminModuleAsset::register($this);
 
 $module = $this->context->module->id;
 ?>
-<?
+<?php
 $form = ActiveForm::begin([
             'enableAjaxValidation' => true,
             'options' => ['class' => 'model-form']
@@ -29,7 +29,7 @@ $js[] = "$('#a_Excel').on('click', function(){
             $('#export-to_excel').val(1)});";
 $this->registerJs(implode(PHP_EOL, $js), View::POS_READY);
 ?>   
-<?
+<?php
 $_items = Item::find()->select(['id', 'category_id', 'brand_id'])->where(['in', 'id', (array) $model->items])->asArray()->all();
 ?>   
 
@@ -49,7 +49,7 @@ $_items = Item::find()->select(['id', 'category_id', 'brand_id'])->where(['in', 
     <div class="col-sm-3">
         <div class="form-group">
             <label class="control-label">Столбцы в excel</label><br>
-            <?
+            <?php
             $count = 0;
             foreach (YmlModule::getFields() as $field) {
                 $count++;
@@ -85,7 +85,7 @@ $_items = Item::find()->select(['id', 'category_id', 'brand_id'])->where(['in', 
             <label class="control-label">Отдельные элементы каталога</label><br>
         </div>
         <input type="hidden" name="Export[items][]">
-        <?
+        <?php
         $tree = Category::tree('catalog', true);
         foreach ($tree->children as $node) {
             echo $node->title . '<br/>';

@@ -1,4 +1,4 @@
-<?
+<?php
 
 use yii\helpers\Url;
 use admin\modules\carousel\api\SlickLightbox;
@@ -14,7 +14,7 @@ $settings = Yii::$app->getModule('admin')->activeModules['article']->settings;
 <?= $item->text ?>
 
 <? if (count($item->photos)) : ?>
-    <?
+    <?php
     SlickLightbox::begin([
     ]);
     ?>
@@ -30,19 +30,19 @@ $settings = Yii::$app->getModule('admin')->activeModules['article']->settings;
         <a rel="nofollow" href="<?= Url::to(['/article', 'slug' => $item->category->slug, 'tag' => $tag]) ?>" class="label label-info"><?= $tag ?></a>
     <? endforeach; ?>
 </p>
-<?
+<?php
 if ($settings['enableViews']) {
     ?>
     <small class="text-muted"><?= Yii::t('admin/article', 'Просмотров') ?>: <?= $item->views ?></small>
-    <?
+    <?php
 }
 ?>
-<?
+<?php
 if ($settings['enableComment']) {
     ?>
     <div class="row">		
         <div class="col-md-12">
-            <?
+            <?php
             echo admin\modules\comment\widgets\Comment::widget([
                 'model' => $item,
                 'dataProviderConfig' => [
@@ -54,6 +54,6 @@ if ($settings['enableComment']) {
             ?>
         </div>
     </div>  
-    <?
+    <?php
 }
 ?>

@@ -1,4 +1,4 @@
-<?
+<?php
 use yii\helpers\Url;
 
 $asset = \admin\assets\PublicAsset::register($this);

@@ -1,4 +1,4 @@
-<?
+<?php
 use yii\data\ArrayDataProvider;
 use yii\grid\GridView;
 use yii\grid\DataColumn;
@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a(Yii::t('admin', 'Добавить новое правило'), ['permission-add'], ['class' => 'btn btn-success']) ?>
     </p>
-<?
+<?php
 $dataProvider = new ArrayDataProvider([
       'allModels' => Yii::$app->authManager->getPermissions(),
       'sort' => [
