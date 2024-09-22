@@ -46,12 +46,12 @@ $this->params['breadcrumbs'][] = $brand->title;
             <noindex>
                 <div class="col-ss-12 col-xs-6 col-sm-12 col-md-12">
                     <div class="border p-15 mb-20">
-                        <? $form = ActiveForm::begin(['method' => 'get', 'action' => Url::to(['/brand', 'slug' => $brand->slug])]); ?>
+                        <?php $form = ActiveForm::begin(['method' => 'get', 'action' => Url::to(['/brand', 'slug' => $brand->slug])]); ?>
                         <?= $form->field($filterForm, 'price_from')->textInput(['class' => 'form-control input-sm']) ?>
                         <?= $form->field($filterForm, 'price_to')->textInput(['class' => 'form-control input-sm']) ?>
                         <?= $form->field($filterForm, 'color')->dropDownList(\admin\helpers\Color::ymlColorsOptions(Yii::t('admin', '(не выбрано)')), ['class' => 'form-control input-sm']) ?>
                         <?= Html::submitButton('Применить', ['class' => 'btn btn-primary btn-block ']) ?>
-                        <? ActiveForm::end(); ?>
+                        <?php ActiveForm::end(); ?>
                     </div> 
                 </div>
             </noindex>
@@ -68,12 +68,12 @@ $this->params['breadcrumbs'][] = $brand->title;
             'pagination' => $pagination,
         ])
         ?>
-        <? if ($showDescription) { ?>
+        <?php if ($showDescription) { ?>
             <div class="row">
                 <div class="col-md-12 text-justify">
                     <?= $brand->description ?>
                 </div>
             </div>
-        <? } ?>
+        <?php } ?>
     </div> 
 </div>

@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = Yii::t('admin', 'Редактирование')
         }
         ?>
 
-        <? $form = ActiveForm::begin(); ?>
+        <?php $form = ActiveForm::begin(); ?>
 
         <div class="form-group">
             <?= Html::label(Yii::t('admin', 'Название роли')); ?>
@@ -45,7 +45,7 @@ $this->params['breadcrumbs'][] = Yii::t('admin', 'Редактирование')
             <?= Html::submitButton(Yii::t('admin', 'Сохранить'), ['class' => 'btn btn-success']) ?>
         </div>
 
-        <? ActiveForm::end(); ?>
+        <?php ActiveForm::end(); ?>
 
     </div>
 </div>

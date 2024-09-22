@@ -9,7 +9,7 @@ $module = $this->context->module->id;
 
 <?= $this->render('_menu') ?>
 
-<? if ($data->count > 0) : ?>
+<?php if ($data->count > 0) : ?>
     <table class="table table-hover">
         <thead>
             <tr>
@@ -22,18 +22,18 @@ $module = $this->context->module->id;
             </tr>
         </thead>
         <tbody>
-            <? foreach ($data->models as $item) : ?>               
+            <?php foreach ($data->models as $item) : ?>               
                 <tr data-id="<?= $item->primaryKey ?>">
                     <td><?= $item->primaryKey ?></td>
                     <td><?= Yii::$app->formatter->asDatetime($item->time, 'short') ?></td>
                     <td><?= $item->renderStatus() ?></td>                    
                     <td><?= $item->description ?> <a href="javascript:void(0);" data-toggle="modal" data-target="#requestModal_<?= $item->id ?>"><i class="fa fa-info-circle"></i></a><?= $item->renderModal('requestModal_' . $item->id) ?></td>
                     <td>    
-                        <? if ($item->order_id) { ?>
+                        <?php if ($item->order_id) { ?>
                             <a href="<?= Url::to(['/admin/shopcart/a/edit', 'id' => $item->order_id]) ?>" title="<?= Yii::t('admin', 'Удалить запись') ?>"><?= Yii::t('admin', 'Заказ №') ?><?= $item->order_id ?></a>
-                        <? } else {?>
+                        <?php } else {?>
                             -
-                        <? } ?>
+                        <?php } ?>
                     </td>
                     <td>
                         <div class="btn-group btn-group-sm" role="group">                            
@@ -41,7 +41,7 @@ $module = $this->context->module->id;
                         </div>
                     </td>
                 </tr>
-            <? endforeach; ?>
+            <?php endforeach; ?>
         </tbody>
     </table>
     <?=
@@ -49,6 +49,6 @@ $module = $this->context->module->id;
         'pagination' => $data->pagination
     ])
     ?>
-<? else : ?>
+<?php else : ?>
     <p><?= Yii::t('admin', 'Записи не найдены') ?></p>
-<? endif; ?>
+<?php endif; ?>

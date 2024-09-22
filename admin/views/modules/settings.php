@@ -8,29 +8,29 @@ $this->title = $model->title;
 <?= $this->render('_menu') ?>
 <?= $this->render('_submenu', ['model' => $model]) ?>
 
-<? if (sizeof($model->settings) > 0) : ?>
+<?php if (sizeof($model->settings) > 0) : ?>
     <?= Html::beginForm(); ?>
-    <? foreach ($model->settings as $key => $value) : ?>
-        <? if (is_array($value)) : ?>
+    <?php foreach ($model->settings as $key => $value) : ?>
+        <?php if (is_array($value)) : ?>
             <?= Html::hiddenInput('text', 'Settings[' . $key . ']', $value, ['class' => 'form-control']); ?>
-        <? elseif (!is_bool($value)) : ?>
+        <?php elseif (!is_bool($value)) : ?>
             <div class="form-group">
                 <label><?= $key; ?></label>
                 <?= Html::input('text', 'Settings[' . $key . ']', $value, ['class' => 'form-control']); ?>
             </div>
-        <? else : ?>
+        <?php else : ?>
             <div class="checkbox">
                 <label>
                     <?= Html::checkbox('Settings[' . $key . ']', $value, ['uncheck' => 0]) ?> <?= $key ?>
                 </label>
             </div>
-        <? endif; ?>
-    <? endforeach; ?>
+        <?php endif; ?>
+    <?php endforeach; ?>
     <?= Html::submitButton(Yii::t('admin', 'Сохранить'), ['class' => 'btn btn-primary']) ?>
-    <? Html::endForm(); ?>
-<? else : ?>
+    <?php Html::endForm(); ?>
+<?php else : ?>
     <?= $model->title ?> <?= Yii::t('admin', 'модуль не имеет никаких настроек') ?>
-<? endif; ?>
+<?php endif; ?>
 <a href="<?= Url::to(['/admin/modules/restore-settings', 'id' => $model->id]) ?>" class="pull-right text-warning"><i class="glyphicon glyphicon-flash"></i> <?= Yii::t('admin', 'Восстановить настройки по-умолчанию') ?></a>
 
 <div class="row mt-40">

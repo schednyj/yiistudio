@@ -20,8 +20,8 @@ $form->field($model, 'body')->widget(Redactor::className(), [
     ]
 ])
 ?>
-<? if ($action === 'edit') { ?>
+<?php if ($action === 'edit') { ?>
     <?= $form->field($model, 'mailing_list')->textarea() ?>
-<? } ?>
+<?php } ?>
 <?= Html::submitButton(Yii::t('admin', 'Сохранить'), ['class' => 'btn btn-primary']) ?>
-<? ActiveForm::end(); ?>
+<?php ActiveForm::end(); ?>

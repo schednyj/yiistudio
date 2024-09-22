@@ -15,13 +15,13 @@ use yii\helpers\Url;
 /* @var $listViewConfig array */
 /* @var $commentWrapperId string */
 ?>
-<div class="comment-wrapper" id="<? echo $commentWrapperId; ?>">
-    <? Pjax::begin(['enablePushState' => false, 'timeout' => 20000, 'id' => $pjaxContainerId]); ?>
+<div class="comment-wrapper" id="<?php echo $commentWrapperId; ?>">
+    <?php Pjax::begin(['enablePushState' => false, 'timeout' => 20000, 'id' => $pjaxContainerId]); ?>
     <div class="comment row">
         <div class="col-md-12 col-sm-12">
             <div class="title-block clearfix">
                 <h3 class="h3-body-title">
-                    <? echo Yii::t('admin/comment', 'Комментарии ({0})', $commentModel->getCommentsCount()); ?>
+                    <?php echo Yii::t('admin/comment', 'Комментарии ({0})', $commentModel->getCommentsCount()); ?>
                 </h3>
                 <div class="title-separator"></div>
             </div>
@@ -44,7 +44,7 @@ use yii\helpers\Url;
                             ], $listViewConfig
             ));
             ?>
-            <? if (!Yii::$app->user->isGuest) { ?>
+            <?php if (!Yii::$app->user->isGuest) { ?>
                 <?php
                 echo $this->render('_form', [
                     'commentModel' => $commentModel,
@@ -52,12 +52,12 @@ use yii\helpers\Url;
                     'encryptedEntity' => $encryptedEntity,
                 ]);
                 ?>
-            <? } else { ?>
+            <?php } else { ?>
                 <noindex>
                     <?= Yii::t('admin/comment', 'Чтобы оставить комментарий, нужно ') ?> <a rel="nofollow" href="javascript:void(0);" title="<?= Yii::t('admin', 'Войти в личный кабинет') ?>" data-url="<?= Url::to(['/user/login']) ?>" class="dotted ajaxModalPopup"><?= Yii::t('admin', 'войти в личный кабинет') ?></a> <?= Yii::t('admin', 'или') ?> <a rel="nofollow" href="javascript:void(0);" title="<?= Yii::t('admin', 'Зарегистрироваться') ?>" data-url="<?= Url::to(['/user/registration']) ?>" class="dotted ajaxModalPopup"><?= Yii::t('admin', 'зарегистрироваться') ?></a>.
                 </noindex>
-            <? } ?>
+            <?php } ?>
         </div>
     </div>
-    <? Pjax::end(); ?>
+    <?php Pjax::end(); ?>
 </div>

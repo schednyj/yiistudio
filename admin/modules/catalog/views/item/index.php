@@ -16,7 +16,7 @@ $module = $this->context->module->id;
 <?= $this->render('_menu', ['category' => $model]) ?>
 
 <div class="row">
-    <? $form = ActiveForm::begin(['method' => 'get', 'action' => Url::to(['/admin/catalog/item', 'id' => $category_id])]); ?>
+    <?php $form = ActiveForm::begin(['method' => 'get', 'action' => Url::to(['/admin/catalog/item', 'id' => $category_id])]); ?>
     <div class="col-md-4">
         <?= $form->field($filterForm, 'brand_id')->dropDownList($brands) ?>
     </div>
@@ -36,7 +36,7 @@ $module = $this->context->module->id;
             <div class="help-block"></div>
         </div>
     </div>
-    <? ActiveForm::end(); ?>
+    <?php ActiveForm::end(); ?>
 </div>
 
 
@@ -170,17 +170,17 @@ GridView::widget([
         <a class="btn btn-success pull-left" href="<?= Url::to($params) ?>"><i class="fa fa-fw fa-download"></i> <?= Yii::t('admin/catalog', 'Выгрузить категорию в Excel') ?></a>
     </div>   
     <div class="col-md-6 text-right">
-        <? $form = ActiveForm::begin(['action' => Url::to(['/admin/yml/excel/update-items-from-excel-file']), 'options' => ['enctype' => 'multipart/form-data']]) ?>
+        <?php $form = ActiveForm::begin(['action' => Url::to(['/admin/yml/excel/update-items-from-excel-file']), 'options' => ['enctype' => 'multipart/form-data']]) ?>
         <?= Html::submitButton('<i class="fa fa-fw fa-upload"></i> ' . Yii::t('admin/catalog', 'Обновить цены и характеристики из Excel'), ['class' => 'btn btn-primary pull-right']) ?>
         <?= $form->field(new Import(['scenario' => 'import']), 'importFile')->fileInput(['class' => 'pull-right'])->label('') ?>
-        <? ActiveForm::end() ?><br><small><?= Yii::t('admin', 'Обновляются существующие элементы каталога, колонки "Закупочная цена","Цена","Статус","Описание" и колонки с доп. характеристиками') ?></small>
+        <?php ActiveForm::end() ?><br><small><?= Yii::t('admin', 'Обновляются существующие элементы каталога, колонки "Закупочная цена","Цена","Статус","Описание" и колонки с доп. характеристиками') ?></small>
 
     </div>     
-    <? if (Yii::$app->getModule('admin')->activeModules['yml']->settings['exportYandexMarketId']) { ?>
+    <?php if (Yii::$app->getModule('admin')->activeModules['yml']->settings['exportYandexMarketId']) { ?>
         <div class="col-md-2 text-right">
             <a class="btn btn-primary" href="<?= Url::to(['/admin/yml/export/execute', 'id' => Yii::$app->getModule('admin')->activeModules['yml']->settings['exportYandexMarketId']]) ?>" title="<?= Yii::t('admin', 'Экспорт на Яндекс.Маркет') ?>"><span class="fa fa-arrow-right"></span> <?= Yii::t('admin', 'Экспорт на Яндекс.Маркет') ?></a>
         </div>
-    <? } ?>
+    <?php } ?>
 </div>
 
 

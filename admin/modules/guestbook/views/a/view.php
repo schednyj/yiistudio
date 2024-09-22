@@ -11,15 +11,15 @@ $this->registerCss('.guestbook-view dt{margin-bottom: 10px;}');
     <dt><?= Yii::t('admin', 'Имя') ?></dt>
     <dd><?= $model->name ?></dd>
 
-    <? if($this->context->module->settings['enableTitle']) : ?>
+    <?php if($this->context->module->settings['enableTitle']) : ?>
     <dt><?= Yii::t('admin', 'Тема сообщения') ?></dt>
     <dd><?= $model->title ?></dd>
-    <? endif; ?>
+    <?php endif; ?>
 
-    <? if($this->context->module->settings['enableEmail']) : ?>
+    <?php if($this->context->module->settings['enableEmail']) : ?>
         <dt><?= Yii::t('admin', 'E-mail') ?></dt>
         <dd><?= $model->email ?></dd>
-    <? endif; ?>
+    <?php endif; ?>
 
     <dt>IP</dt>
     <dd><?= $model->ip ?> <a href="//freegeoip.net/?q=<?= $model->ip ?>" class="label label-info" target="_blank">info</a></dd>
@@ -38,12 +38,12 @@ $this->registerCss('.guestbook-view dt{margin-bottom: 10px;}');
     <div class="form-group">
         <?= Html::textarea('Guestbook[answer]', $model->answer, ['class' => 'form-control', 'style' => 'height: 250px']) ?>
     </div>
-    <? if($model->answer == '' && $model->email) : ?>
+    <?php if($model->answer == '' && $model->email) : ?>
     <div class="checkbox">
         <label>
             <input type="checkbox" name="mailUser" value="1" checked> <?= Yii::t('admin/guestbook', 'Послать уведомление пользователю об ответе') ?>
         </label>
     </div>
-    <? endif; ?>
+    <?php endif; ?>
     <?= Html::submitButton(Yii::t('admin', 'Сохранить'), ['class' => 'btn btn-success send-answer']) ?>
 <?= Html::endForm() ?>

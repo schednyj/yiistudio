@@ -28,4 +28,4 @@ $form->field($model, 'text')->widget(Redactor::className(), [
 <?= SeoTextForm::widget(['model' => $model]) ?>
 
 <?= Html::submitButton(Yii::t('admin', 'Сохранить'), ['class' => 'btn btn-primary']) ?>
-<? ActiveForm::end(); ?>
+<?php ActiveForm::end(); ?>

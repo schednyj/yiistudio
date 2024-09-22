@@ -26,4 +26,4 @@ $form = ActiveForm::begin([
         <?= Html::submitButton(Yii::t('admin', 'Сохранить'), ['class' => 'btn btn-primary']) ?>
     </div>
 </div>
-<? ActiveForm::end(); ?>
+<?php ActiveForm::end(); ?>

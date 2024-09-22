@@ -11,21 +11,21 @@ $baseUrl = '/admin/'.$this->context->module->id;
 
 <?= $this->render('_menu') ?>
 
-<? if(sizeof($categories) > 0) : ?>
+<?php if(sizeof($categories) > 0) : ?>
     <table class="table table-hover">
         <tbody>
-            <? foreach($categories as $category) : ?>
+            <?php foreach($categories as $category) : ?>
                 <tr>
                     <td width="50"><?= $category->id ?></td>
                     <td style="padding-left:  <?= $category->depth * 20 ?>px;">
-                        <? if(count($category->children)) : ?>
+                        <?php if(count($category->children)) : ?>
                             <i class="caret"></i>
-                        <? endif; ?>
-                        <? if(!count($category->children) || !empty(Yii::$app->controller->module->settings['itemsInFolder'])) : ?>
+                        <?php endif; ?>
+                        <?php if(!count($category->children) || !empty(Yii::$app->controller->module->settings['itemsInFolder'])) : ?>
                             <a href="<?= Url::to([$baseUrl . $this->context->viewRoute, 'id' => $category->id]) ?>" <?= ($category->status == CategoryModel::STATUS_OFF ? 'class="text-muted"' : '') ?>><?= $category->title ?></a>
-                        <? else : ?>
+                        <?php else : ?>
                             <span <?= ($category->status == CategoryModel::STATUS_OFF ? 'class="text-muted"' : '') ?>><?= $category->title ?></span>
-                        <? endif; ?>
+                        <?php endif; ?>
                     </td>
                     <td width="120" class="text-right">
                         <div class="dropdown actions">
@@ -37,19 +37,19 @@ $baseUrl = '/admin/'.$this->context->module->id;
                                 <li><a href="<?= Url::to([$baseUrl.'/a/up', 'id' => $category->id]) ?>"><i class="fa fa-arrow-up fs-12"></i> <?= Yii::t('admin', 'Переместить вверх') ?></a></li>
                                 <li><a href="<?= Url::to([$baseUrl.'/a/down', 'id' => $category->id]) ?>"><i class="fa fa-arrow-down fs-12"></i> <?= Yii::t('admin', 'Переместить вниз') ?></a></li>
                                 <li role="presentation" class="divider"></li>
-                                <? if($category->status == CategoryModel::STATUS_ON) :?>
+                                <?php if($category->status == CategoryModel::STATUS_ON) :?>
                                     <li><a href="<?= Url::to([$baseUrl.'/a/off', 'id' => $category->id]) ?>" title="<?= Yii::t('admin', 'Выключить') ?>'"><i class="fa fa-eye-slash fs-12"></i> <?= Yii::t('admin', 'Деактивировать') ?></a></li>
-                                <? else : ?>
+                                <?php else : ?>
                                     <li><a href="<?= Url::to([$baseUrl.'/a/on', 'id' => $category->id]) ?>" title="<?= Yii::t('admin', 'Включить') ?>"><i class="fa fa-eye fs-12"></i> <?= Yii::t('admin', 'Активировать') ?></a></li>
-                                <? endif; ?>
+                                <?php endif; ?>
                                 <li><a href="<?= Url::to([$baseUrl.'/a/delete', 'id' => $category->id]) ?>" class="text-red" data-reload="1" title="<?= Yii::t('admin', 'Удалить категорию') ?>"><i class="fa fa-times fs-12"></i> <?= Yii::t('admin', 'Удалить категорию') ?></a></li>
                             </ul>
                         </div>
                     </td>
                 </tr>
-            <? endforeach;?>
+            <?php endforeach;?>
         </tbody>
     </table>
-<? else : ?>
+<?php else : ?>
     <p><?= Yii::t('admin', 'Записи не найдены') ?></p>
-<? endif; ?>
+<?php endif; ?>

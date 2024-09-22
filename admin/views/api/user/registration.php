@@ -12,19 +12,19 @@ $this->title = Yii::t('admin', 'Регистрация');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div>
-    <? if (!Yii::$app->request->isAjax) { ?>
+    <?php if (!Yii::$app->request->isAjax) { ?>
         <h1><?= Html::encode($this->title) ?></h1>
-    <? } ?>
+    <?php } ?>
     <p><?= Yii::t('admin', 'Пожалуйста, заполните для регистрации') ?>:</p>
     <div class="row">
         <div class="col-lg-5">
-            <? $form = ActiveForm::begin(['id' => 'form-registration']); ?>
+            <?php $form = ActiveForm::begin(['id' => 'form-registration']); ?>
 
             <?php
             $first = true;
             foreach ($registrationForm->attributes as $key => $value) {
                 ?>
-                <? if ($key == 'email') { ?>
+                <?php if ($key == 'email') { ?>
                     <?= $form->field($registrationForm, 'email')->textInput(['autofocus' => $first]) ?>
                     <?php
                 } elseif ($key == 'password') {
@@ -50,7 +50,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="form-group">
             <?= Html::submitButton(Yii::t('admin', 'Зарегистрироваться'), ['class' => 'btn btn-primary', 'name' => 'registration-button']) ?>
             </div>
-                <? ActiveForm::end(); ?>
+                <?php ActiveForm::end(); ?>
         </div>
     </div>
 </div>

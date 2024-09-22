@@ -13,19 +13,19 @@ $this->params['breadcrumbs'][] = $album->model->title;
 <h1><?= $album->seo('h1', $album->title) ?></h1>
 
 
-<? if (count($photos)) { ?>
+<?php if (count($photos)) { ?>
     <?php
     SlickLightbox::begin([
     ]);
     ?>
-    <? foreach ($photos as $photo) { ?>
+    <?php foreach ($photos as $photo) { ?>
         <?= $photo->box(200, 200) ?>
-    <? } ?>
-    <? SlickLightbox::end(); ?>
+    <?php } ?>
+    <?php SlickLightbox::end(); ?>
     <br/>
-<? } else { ?>
+<?php } else { ?>
     <p><?= Yii::t('admin/gallery', 'Нет изображений') ?></p>
-<? } ?>
+<?php } ?>
 <?=
 $album->pages([
     'prevPageLabel' => '<i class="fa fa-fw fa-long-arrow-left"></i>',

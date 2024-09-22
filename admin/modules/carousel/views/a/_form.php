@@ -2,20 +2,20 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 ?>
-<? $form = ActiveForm::begin([
+<?php $form = ActiveForm::begin([
     'enableClientValidation' => true,
     'options' => ['enctype' => 'multipart/form-data', 'class' => 'model-form']
 ]); ?>
-<? if($model->image) : ?>
+<?php if($model->image) : ?>
     <img src="<?= $model->image ?>" style="width: 848px">
-<? endif; ?>
+<?php endif; ?>
 <?= $form->field($model, 'image')->fileInput() ?>
 <?= $form->field($model, 'link') ?>
-<? if($this->context->module->settings['enableTitle']) : ?>
+<?php if($this->context->module->settings['enableTitle']) : ?>
     <?= $form->field($model, 'title')->textarea() ?>
-<? endif; ?>
-<? if($this->context->module->settings['enableText']) : ?>
+<?php endif; ?>
+<?php if($this->context->module->settings['enableText']) : ?>
     <?= $form->field($model, 'text')->textarea() ?>
-<? endif; ?>
+<?php endif; ?>
 <?= Html::submitButton(Yii::t('admin', 'Сохранить'), ['class' => 'btn btn-primary']) ?>
-<? ActiveForm::end(); ?>
+<?php ActiveForm::end(); ?>

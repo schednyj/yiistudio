@@ -9,7 +9,7 @@ if($this->context->module->id != 'admin')
     $appAsset = $appAssetPath::register($this);
 }
 ?>
-<? $this->beginPage() ?>
+<?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
     <head>        
@@ -21,14 +21,14 @@ if($this->context->module->id != 'admin')
         <meta content="<?= Html::encode($this->params['keywords']) ?>" name="keywords">
         <link rel="shortcut icon" href="<?= $appAsset->baseUrl ?>/favicon.ico" type="image/x-icon">
         <link rel="icon" href="<?= $appAsset->baseUrl ?>/favicon.ico" type="image/x-icon">        
-        <? $this->head() ?>
+        <?php $this->head() ?>
     </head>
     <body>
-        <? $this->beginBody() ?>
+        <?php $this->beginBody() ?>
         <?= $content ?>
-        <? $this->endBody() ?>
-        <? AjaxModalPopup::renderModal() ?>
+        <?php $this->endBody() ?>
+        <?php AjaxModalPopup::renderModal() ?>
         <?= \admin\widgets\Counters::widget(); ?>
     </body>
 </html>
-<? $this->endPage() ?>
+<?php $this->endPage() ?>

@@ -8,7 +8,7 @@ $this->title = Yii::t('admin/yml', 'Работа с excel файлами');
 
 $module = $this->context->module->id;
 ?>
-<? $form = ActiveForm::begin(['action' => Url::to(['/admin/' . $module . '/excel/load-categories-from-excel-file']), 'options' => ['enctype' => 'multipart/form-data']]) ?>
+<?php $form = ActiveForm::begin(['action' => Url::to(['/admin/' . $module . '/excel/load-categories-from-excel-file']), 'options' => ['enctype' => 'multipart/form-data']]) ?>
 
 <?= $form->field($model, 'importFile')->fileInput()->label(Yii::t('admin/yml', 'Укажите excel файл')) ?>
 
@@ -19,12 +19,12 @@ $module = $this->context->module->id;
     </div>
 </div>
 
-<? ActiveForm::end() ?>
+<?php ActiveForm::end() ?>
 <br>
 <br>
 <br>
 <br>
-<? $form = ActiveForm::begin(['action' => Url::to(['/admin/' . $module . '/excel/add-items-from-excel-file']), 'options' => ['enctype' => 'multipart/form-data']]) ?>
+<?php $form = ActiveForm::begin(['action' => Url::to(['/admin/' . $module . '/excel/add-items-from-excel-file']), 'options' => ['enctype' => 'multipart/form-data']]) ?>
 
 <?= $form->field($model, 'importFile')->fileInput()->label(Yii::t('admin/yml', 'Укажите excel файл')) ?>
 
@@ -35,12 +35,12 @@ $module = $this->context->module->id;
     </div>
 </div>
 
-<? ActiveForm::end() ?>
+<?php ActiveForm::end() ?>
 <br>
 <br>
 <br>
 <br>
-<? $form = ActiveForm::begin(['action' => Url::to(['/admin/' . $module . '/excel/update-items-from-excel-file']), 'options' => ['enctype' => 'multipart/form-data']]) ?>
+<?php $form = ActiveForm::begin(['action' => Url::to(['/admin/' . $module . '/excel/update-items-from-excel-file']), 'options' => ['enctype' => 'multipart/form-data']]) ?>
 
 <?= $form->field($model, 'importFile')->fileInput()->label(Yii::t('admin/yml', 'Укажите excel файл')) ?>
 
@@ -51,12 +51,12 @@ $module = $this->context->module->id;
     </div>
 </div>
 
-<? ActiveForm::end() ?>
+<?php ActiveForm::end() ?>
 <br>
 <br>
 <br>
 <br>
-<? $form = ActiveForm::begin(['action' => Url::to(['/admin/' . $module . '/excel/load-news-from-excel-file']), 'options' => ['enctype' => 'multipart/form-data']]) ?>
+<?php $form = ActiveForm::begin(['action' => Url::to(['/admin/' . $module . '/excel/load-news-from-excel-file']), 'options' => ['enctype' => 'multipart/form-data']]) ?>
 
 <?= $form->field($model, 'importFile')->fileInput()->label(Yii::t('admin/yml', 'Укажите excel файл')) ?>
 
@@ -67,12 +67,12 @@ $module = $this->context->module->id;
     </div>
 </div>
 
-<? ActiveForm::end() ?>
+<?php ActiveForm::end() ?>
 <br>
 <br>
 <br>
 <br>
-<? $form = ActiveForm::begin(['action' => Url::to(['/admin/' . $module . '/excel/load-users-from-excel-file']), 'options' => ['enctype' => 'multipart/form-data']]) ?>
+<?php $form = ActiveForm::begin(['action' => Url::to(['/admin/' . $module . '/excel/load-users-from-excel-file']), 'options' => ['enctype' => 'multipart/form-data']]) ?>
 
 <?= $form->field($model, 'importFile')->fileInput()->label(Yii::t('admin/yml', 'Укажите excel файл')) ?>
 
@@ -83,4 +83,4 @@ $module = $this->context->module->id;
     </div>
 </div>
 
-<? ActiveForm::end() ?>
+<?php ActiveForm::end() ?>

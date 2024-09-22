@@ -18,17 +18,17 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="col-md-6">
         <div class="row">
             <div class="col-md-10">
-                <? if (!Yii::$app->request->isAjax) { ?>
+                <?php if (!Yii::$app->request->isAjax) { ?>
                     <h1><?= Html::encode($this->title) ?></h1>
-                <? } ?>
+                <?php } ?>
                 <p><b><?= Yii::t('admin', 'Регистрация') ?>:</b></p>
-                <? $form = ActiveForm::begin(['method' => 'post', 'action' => Url::to(['/user/registration']), 'id' => 'registration-form', 'enableClientValidation' => true]); ?>
+                <?php $form = ActiveForm::begin(['method' => 'post', 'action' => Url::to(['/user/registration']), 'id' => 'registration-form', 'enableClientValidation' => true]); ?>
 
                 <?php
                 $first = true;
                 foreach ($registrationForm->attributes as $key => $value) {
                     ?>
-                    <? if ($key == 'email') { ?>
+                    <?php if ($key == 'email') { ?>
                         <?= $form->field($registrationForm, 'email')->textInput(['autofocus' => $first]) ?>
                         <?php
                     } elseif ($key == 'password') {
@@ -54,18 +54,18 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="form-group">
                     <?= Html::submitButton(Yii::t('admin', 'Зарегистрироваться'), ['class' => 'btn btn-primary', 'name' => 'registration-button']) ?>
                 </div>
-                <? ActiveForm::end(); ?>
+                <?php ActiveForm::end(); ?>
             </div>
         </div>
     </div>
     <div class="col-md-6" style="border-left: 1px solid #e5e5e5;">
         <div class="row">
             <div class="col-md-10">
-                <? if (!Yii::$app->request->isAjax) { ?>
+                <?php if (!Yii::$app->request->isAjax) { ?>
                     <h1><?= Html::encode($this->title) ?></h1>
-                <? } ?>
+                <?php } ?>
                 <p><b><?= Yii::t('admin', 'Вход в систему') ?>:</b></p>
-                <? $form = ActiveForm::begin(['method' => 'post', 'action' => Url::to(['/user/login']), 'id' => 'login-form', 'enableClientValidation' => true]); ?>
+                <?php $form = ActiveForm::begin(['method' => 'post', 'action' => Url::to(['/user/login']), 'id' => 'login-form', 'enableClientValidation' => true]); ?>
 
                 <?= $form->field($loginForm, 'email')->textInput(['autofocus' => true]) ?>
 
@@ -73,7 +73,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="form-group">
                     <?= Html::submitButton(Yii::t('admin', 'Войти'), ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
                 </div>
-                <? ActiveForm::end(); ?>
+                <?php ActiveForm::end(); ?>
             </div>
         </div>
         <div class="text-muted mb-10">

@@ -40,7 +40,7 @@ var fieldTemplate = \'\
         <th width="120"></th>
     </thead>
     <tbody>
-    <? foreach($model->fields as $field) : ?>
+    <?php foreach($model->fields as $field) : ?>
         <tr>
             <td><?= Html::input('text', null, $field->name, ['class' => 'form-control field-name']) ?></td>
             <td><?= Html::input('text', null, $field->title, ['class' => 'form-control field-title']) ?></td>
@@ -60,7 +60,7 @@ var fieldTemplate = \'\
                 </div>
             </td>
         </tr>
-    <? endforeach; ?>
+    <?php endforeach; ?>
     </tbody>
 </table>
 <br>

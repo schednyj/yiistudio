@@ -7,5 +7,5 @@ $this->title = $subject;
 <hr>
 <p><?= Yii::$app->formatter->asDatetime($feedback->time, 'medium') ?> Вы писали:</p>
 <p>
-    <? foreach(explode("\n", $feedback->text) as $line) echo '> '.$line.'<br>'; ?>
+    <?php foreach(explode("\n", $feedback->text) as $line) echo '> '.$line.'<br>'; ?>
 </p>

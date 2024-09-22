@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\Url;
 ?>
-<? $form = ActiveForm::begin(['enableAjaxValidation' => true]); ?>
+<?php $form = ActiveForm::begin(['enableAjaxValidation' => true]); ?>
 <?= $form->field($model, 'email')->textInput($this->context->action->id === 'edit' ? ['disabled' => 'disabled'] : []) ?>
 <?= $form->field($model, 'password')->passwordInput(['value' => '']) ?>
 
@@ -14,7 +14,7 @@ use yii\helpers\Url;
 <br>
 
 <?= Html::submitButton(Yii::t('admin', 'Сохранить'), ['class' => 'btn btn-primary']) ?>
-<? ActiveForm::end(); ?>
+<?php ActiveForm::end(); ?>
 
 
 <div class="row">
@@ -22,7 +22,7 @@ use yii\helpers\Url;
         <h3><?= Yii::t('admin', 'Дополнительные данные пользователя') ?></h3>
         <hr>            
         <?= Html::beginForm(Url::to(['/admin/users/data', 'id' => $model->id]), 'post') ?>
-        <? $model->renderDataForm()?>
+        <?php $model->renderDataForm()?>
         
         <?= Html::submitButton(Yii::t('admin', 'Сохранить дополнительные данные'), ['class' => 'btn btn-primary']) ?>
         <?= Html::endForm() ?>            

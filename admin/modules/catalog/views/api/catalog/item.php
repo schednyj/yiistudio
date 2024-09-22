@@ -27,7 +27,7 @@ $settings = Yii::$app->getModule('admin')->activeModules['catalog']->settings;
                     </div>
                 </a>
 
-                <? if (count($item->photos)) { ?>
+                <?php if (count($item->photos)) { ?>
                     <div class="row">                
                         <?php
                         Slick::begin([
@@ -47,20 +47,20 @@ $settings = Yii::$app->getModule('admin')->activeModules['catalog']->settings;
                             ],
                         ]);
                         ?>
-                        <? foreach ($item->photos as $photo) { ?>
+                        <?php foreach ($item->photos as $photo) { ?>
                             <a class="square display-block bgn-center border col-ss-4 col-xs-4 col-sm-4 col-md-4 m-5" href="<?= $photo->image ?>" data-image="<?= $photo->thumb(360, 360) ?>" style="background-image:url('<?= $photo->thumb(90, 90) ?>');">
                             </a>
-                        <? } ?>
-                        <? Slick::end(); ?>
+                        <?php } ?>
+                        <?php Slick::end(); ?>
                     </div>
-                <? } ?>              
-                <? if ($item->new != 0) { ?>
+                <?php } ?>
+                <?php if ($item->new != 0) { ?>
                     <div class="new-sticker" style="top:14px;left:45px;">
                         <a href="javascript:void(0);" rel="nofollow" title="<?= Yii::t('admin/catalog', 'Новинка!') ?>" class="no-text-decoration с-second">
                             <i class="fa fa-bookmark fs-20"></i> <?= Yii::t('admin/catalog', 'Новинка!') ?>
                         </a>
                     </div>
-                <? } ?>
+                <?php } ?>
             </div>
             <div class="col-md-7">
                 <div class="row mb-10">
@@ -88,9 +88,9 @@ $settings = Yii::$app->getModule('admin')->activeModules['catalog']->settings;
                 <div class="row mb-10">
                     <div class="col-md-7 col-sm-7 col-xs-5 fs-22">
                         <strong><?= $item->price ?> <i class="fas fa-ruble-sign"></i>
-                            <? if ($item->discount) : ?>
+                            <?php if ($item->discount) : ?>
                                 <del class="small"><?= $item->oldPrice ?></del>
-                            <? endif; ?>
+                            <?php endif; ?>
                         </strong>
                     </div>
                     <div class="col-md-5 col-sm-5 col-xs-7 text-right">
@@ -98,7 +98,7 @@ $settings = Yii::$app->getModule('admin')->activeModules['catalog']->settings;
                     </div>
                 </div>
                 <div class="row mb-20">
-                    <? if ($item->available) { ?>
+                    <?php if ($item->available) { ?>
                         <?php
                         $form = ActiveForm::begin(['action' => Url::to(['/shopcart/add', 'id' => $item->id]), 'options' => [
                                         'class' => 'form_add_to_cart'
@@ -123,27 +123,27 @@ $settings = Yii::$app->getModule('admin')->activeModules['catalog']->settings;
                             </div>
                             <?= $form->field($addToCartForm, 'count')->label(false)->hiddenInput(['id' => 'count_input']) ?>
                         </div>
-                        <? if ($settings['enableFast']) { ?>
+                        <?php if ($settings['enableFast']) { ?>
                             <div class="col-md-6 col-sm-6 mb-10">
                                 <?= Html::submitButton('<i class="fa fa-shopping-cart"></i> Добавить в корзину', ['class' => 'btn btn-primary btn-block']) ?>    
                             </div>
                             <div class="col-md-3 col-sm-3 mb-10 text-right">
                                 <a href="javascript:void(0);" rel="nofollow" title="<?= Yii::t('admin/catalog', 'Купить в один клик') ?>" data-url="<?= Url::to(['/shopcart/fast', 'id' => $item->id]) ?>" class="dotted ajaxModalPopup"><?= Yii::t('admin/catalog', 'Купить в один клик') ?></a>
                             </div>   
-                        <? } else { ?>
+                        <?php } else { ?>
                             <div class="col-md-3 col-sm-3 mb-10">
 
                             </div> 
                             <div class="col-md-6 col-sm-6 mb-10">
                                 <?= Html::submitButton('<i class="fa fa-shopping-cart"></i> Добавить в корзину', ['class' => 'btn btn-primary btn-block']) ?>    
                             </div>
-                        <? } ?>
-                        <? ActiveForm::end(); ?> 
-                    <? } else { ?>
+                        <?php } ?>
+                        <?php ActiveForm::end(); ?>
+                    <?php } else { ?>
                         <div class="col-md-12">
                             <?= Yii::t('admin/catalog', 'Под заказ') ?>
                         </div>  
-                    <? } ?>
+                    <?php } ?>
                 </div>
                 <?php
                 if (count($group->items) > 1) {
@@ -181,46 +181,46 @@ $settings = Yii::$app->getModule('admin')->activeModules['catalog']->settings;
                 ?>
                 <div class="row mb-10">
                     <div class="col-md-6 mb-10">
-                        <? if (!empty($item->brand)) { ?>
+                        <?php if (!empty($item->brand)) { ?>
                             <span class="text-muted"><?= Yii::t('admin/catalog', 'Бренд') ?>:</span> <a href="<?= Url::to(['/brand', 'slug' => $item->brand->slug]) ?>" title="<?= Yii::t('admin/catalog', 'Все товары этого бренда') ?>"><?= $item->brand->title ?></a>
                             <br>
-                        <? } ?>
-                        <? if (!empty($item->data->color)) { ?>
+                        <?php } ?>
+                        <?php if (!empty($item->data->color)) { ?>
                             <span class="text-muted"><?= Yii::t('admin/catalog', 'Основной цвет') ?>:</span> <?= $item->data->color ?></span>
                             <br>
-                        <? } ?>
-                        <? if (!empty($item->data->dimensions)) { ?>
+                        <?php } ?>
+                        <?php if (!empty($item->data->dimensions)) { ?>
                             <span class="text-muted"><?= Yii::t('admin/catalog', 'Размеры (ШхВхГ)') ?>:</span> <?= $item->data->dimensions ?></span>
                             <br>
-                        <? } ?>          
-                        <? if (!empty($item->data->weight)) { ?>
+                        <?php } ?>
+                        <?php if (!empty($item->data->weight)) { ?>
                             <span class="text-muted"><?= Yii::t('admin/catalog', 'Вес') ?>:</span> <?= $item->data->weight ?></span>
                             <br>
-                        <? } ?>
-                        <? if (!empty($item->data->volume)) { ?>
+                        <?php } ?>
+                        <?php if (!empty($item->data->volume)) { ?>
                             <span class="text-muted"><?= Yii::t('admin/catalog', 'Объем') ?>:</span> <?= $item->data->volume ?></span>
                             <br>
-                        <? } ?>
-                        <? if (!empty($item->data->material)) { ?>
+                        <?php } ?>
+                        <?php if (!empty($item->data->material)) { ?>
                             <span class="text-muted"><?= Yii::t('admin/catalog', 'Материал') ?>:</span> <?= $item->data->material ?></span>
                             <br>
-                        <? } ?>
-                        <? if (!empty($item->data->country)) { ?>
+                        <?php } ?>
+                        <?php if (!empty($item->data->country)) { ?>
                             <span class="text-muted"><?= Yii::t('admin/catalog', 'Страна') ?>:</span> <?= $item->data->country ?></span>                   
                             <br>
-                        <? } ?>
-                        <? if (!empty($item->data->features)) { ?>
+                        <?php } ?>
+                        <?php if (!empty($item->data->features)) { ?>
                             <br>
                             <span class="text-muted"><?= Yii::t('admin/catalog', 'Особенности') ?>:</span> <?= implode(', ', $item->data->features) ?>
-                        <? } ?>
+                        <?php } ?>
                     </div>
                     <div class="col-md-6 mb-10  text-right">
-                        <? if ($item->gift) { ?>
+                        <?php if ($item->gift) { ?>
                             <a href="javascript:void(0);" rel="nofollow" title="<?= Yii::t('admin/catalog', 'К этому товару полагается подарок!') ?>" data-url="<?= Url::to(['/sale', 'slug' => $item->gift]) ?>" class="ajaxModalPopup с-second dotted" style="vertical-align: text-bottom;">
                                 <i class="fa fa-gift fs-20"></i> <?= Yii::t('admin/catalog', 'К этому товару полагается подарок!') ?>
                             </a>
                             <br>
-                        <? } ?>
+                        <?php } ?>
                     </div>
                 </div>                
                 <div class="row mb-20">
@@ -228,14 +228,14 @@ $settings = Yii::$app->getModule('admin')->activeModules['catalog']->settings;
                         <?= Block::get('item_info')->text ?>                           
                     </div>
                 </div>
-                <? if ($settings['enableShare']) { ?>
+                <?php if ($settings['enableShare']) { ?>
                     <div class="row mb-20">
                         <div class="col-md-12">
-                            <? $this->registerJsFile('//yastatic.net/share2/share.js', ['position' => yii\web\View::POS_END]) ?>
+                            <?php $this->registerJsFile('//yastatic.net/share2/share.js', ['position' => yii\web\View::POS_END]) ?>
                             <span style="padding-right: 5px;padding-top: 2px;" class="text-muted pull-left">Поделиться: </span><div class="ya-share2 pull-left" data-services="vkontakte,whatsapp,facebook,odnoklassniki,twitter"></div>
                         </div>
                     </div>
-                <? } ?>
+                <?php } ?>
             </div>
         </div>    
     </div>    

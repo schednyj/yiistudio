@@ -11,10 +11,10 @@ $this->params['description'] = $page->seo('description');
 $this->params['keywords'] = $page->seo('keywords');
 $this->params['breadcrumbs'][] = $page->title;
 ?>
-<? if (!Yii::$app->request->isAjax) { ?>
+<?php if (!Yii::$app->request->isAjax) { ?>
     <h1><?= $page->seo('h1') ?></h1>
-<? } ?>
-<? if (count($goods)) : ?>
+<?php } ?>
+<?php if (count($goods)) : ?>
     <div class="row mb-20">
         <div class="col-md-12">
             <?= Html::beginForm(Url::to(['/shopcart/update']), 'post', ['id' => 'shopcart_update']) ?>
@@ -54,15 +54,15 @@ $this->params['breadcrumbs'][] = $page->title;
                                 <a href="javascript:void(0);" class="shopcart_count_increase" style="color:#555" data-good-id="<?= $good->item->id ?>"><i class="fa fa-plus"></i></a>
                             </td>
                             <td class="text-center">
-                                <? if ($good->discount) : ?>
+                                <?php if ($good->discount) : ?>
                                     <del class="text-muted"><small><?= $good->oldPrice ?></small></del>
-                                <? endif; ?>
+                                <?php endif; ?>
                                         <?= $good->price ?> <i class="fas fa-ruble-sign"></i>
                             </td>
                             <td class="text-center"><?= $good->price * $good->count ?> <i class="fas fa-ruble-sign"></td>
                             <td><a href="javascript:void(0);" title="<?= Yii::t('admin', 'Удалить наименование') ?>" data-remove-id="<?= $good->id ?>" class="shopcart_remove_button"><i class="fa fa-times text-danger"></i></a></td>
                         </tr>
-                    <? endforeach; ?>
+                    <?php endforeach; ?>
                     <tr>
                         <td colspan="6" class="text-right">
                             <h4><?= Yii::t('admin/shopcart', 'Стоимость {goods_total_count} товара(ов):', ['goods_total_count' => $goods_total_count]) ?> <?= Shopcart::cost() ?> <i class="fas fa-ruble-sign"></i></h4>                            
@@ -75,6 +75,6 @@ $this->params['breadcrumbs'][] = $page->title;
         </div>           
     </div>
     <?= $this->render('_create_order', ['orderForm' => $orderForm]) ?>
-<? else : ?>
+<?php else : ?>
     <p><?= Yii::t('admin/shopcart', 'В корзине пока еще нет товаров') ?></p>
-<? endif; ?>
+<?php endif; ?>

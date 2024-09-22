@@ -7,9 +7,9 @@ $module = $this->context->module->id;
 <ul class="nav nav-pills">
     <li <?= ($action === 'index') ? 'class="active"' : '' ?>>
         <a href="<?= Url::to('/admin/' . $module) ?>">
-            <? if($action === 'edit' || $action === 'photos') : ?>
+            <?php if($action === 'edit' || $action === 'photos') : ?>
                 <i class="glyphicon glyphicon-chevron-left fs-12"></i>
-            <? endif; ?>
+            <?php endif; ?>
             <?= Yii::t('admin/gallery', 'Альбомы') ?>
         </a>
     </li>

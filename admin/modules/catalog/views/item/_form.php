@@ -22,7 +22,7 @@ $form = ActiveForm::begin([
         ]);
 ?>
 <h1 class="mb-20"><?= $model->title ?></h1>
-<? if ($model->external_name) { ?>
+<?php if ($model->external_name) { ?>
     <div class="row mb-20">
         <div class="col-md-6"><span class="label label-warning"><?= Yii::t('admin/catalog', 'Позиция из внешнего источника') ?>: <?= $model->external_name ?> <?= $model->external_id ?></span> </div>
         <div class="col-md-6 text-right"><?=
@@ -30,7 +30,7 @@ $form = ActiveForm::begin([
             ?>
         </div>
     </div>
-<? } ?>
+<?php } ?>
 <?php
 if ($model->primaryKey) {
     ?>
@@ -72,19 +72,19 @@ if ($model->primaryKey) {
     </div>
     <div class="col-md-2">
         <div class="col-md-12 text-right">
-            <? if ($settings['itemThumb']) : ?>
+            <?php if ($settings['itemThumb']) : ?>
                 <?php
                 if ($model->image) {
                     ?>
                     <img src="<?= Image::thumb($model->image, 180) ?>">       
-                <? } ?>
-            <? endif; ?>
+                <?php } ?>
+            <?php endif; ?>
         </div>
     </div>
 </div>
 <div class="row mb-20">
     <div class="col-md-6">
-        <? if ($settings['itemDescription']) : ?>
+        <?php if ($settings['itemDescription']) : ?>
             <?=
             $form->field($model, 'description')->widget(Redactor::className(), [
                 'options' => [
@@ -93,7 +93,7 @@ if ($model->primaryKey) {
                 ]
             ])
             ?>
-        <? endif; ?>
+        <?php endif; ?>
         <div class="row">
             <div class="col-md-6">
                 <?= $form->field($model, 'slug') ?>
@@ -127,4 +127,4 @@ if ($model->primaryKey) {
         <a href="<?= Url::to(['/admin/' . $module . '/item/delete', 'id' => $model->primaryKey]) ?>" class="btn btn-danger btn-block" title="<?= Yii::t('admin', 'Удалить') ?>"><span class="fa fa-times"></span> <?= Yii::t('admin', 'Удалить') ?></a>
     </div>
 </div>
-<? ActiveForm::end(); ?>
+<?php ActiveForm::end(); ?>

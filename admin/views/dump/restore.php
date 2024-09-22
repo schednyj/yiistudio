@@ -21,12 +21,12 @@ $form = ActiveForm::begin([
 
 <?= $form->field($model, 'restoreScript')->checkbox() ?>
 
-<? if ($model->hasPresets()): ?>
+<?php if ($model->hasPresets()): ?>
     <?= $form->field($model, 'preset')->dropDownList($model->getCustomOptions(), ['prompt' => '']) ?>
-<? endif ?>
+<?php endif ?>
 
 <?= Html::submitButton(Yii::t('admin', 'Восстановить'), ['class' => 'btn btn-success']) ?>
 
-<? ActiveForm::end() ?>
+<?php ActiveForm::end() ?>
 
 

@@ -10,13 +10,13 @@ $this->title = Yii::t('admin', 'Вход в систему');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div>
-    <? if (!Yii::$app->request->isAjax) { ?>
+    <?php if (!Yii::$app->request->isAjax) { ?>
         <h1><?= Html::encode($this->title) ?></h1>
-    <? } ?>
+    <?php } ?>
     <p><?= Yii::t('admin', 'Пожалуйста, заполните для входа') ?>:</p>
     <div class="row">
         <div class="col-lg-5">
-            <? $form = ActiveForm::begin(['id' => 'login-form', 'enableClientValidation' => true]); ?>
+            <?php $form = ActiveForm::begin(['id' => 'login-form', 'enableClientValidation' => true]); ?>
 
             <?= $form->field($model, 'email')->textInput(['autofocus' => true]) ?>
 
@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?= Html::submitButton(Yii::t('admin','Вход'), ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
             </div>
 
-            <? ActiveForm::end(); ?>
+            <?php ActiveForm::end(); ?>
         </div>
     </div>
 </div>

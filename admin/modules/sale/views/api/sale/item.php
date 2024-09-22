@@ -12,22 +12,22 @@ $this->params['breadcrumbs'][] = $sale->title;
 <h1><?= $sale->seo('h1') ?></h1>
 <br><span class="label label-primary"><?= $sale->date ?></span><br><br>
 <?= $sale->text ?>
-<? if (count($sale->photos)) : ?>
+<?php if (count($sale->photos)) : ?>
     <p>
         <?php
         SlickLightbox::begin([
         ]);
         ?>
-        <? foreach ($sale->photos as $photo) : ?>
+        <?php foreach ($sale->photos as $photo) : ?>
             <?= $photo->box(180, 180) ?>
-        <? endforeach; ?>
-        <? SlickLightbox::end(); ?>
+        <?php endforeach; ?>
+        <?php SlickLightbox::end(); ?>
     </p>
-<? endif; ?>
+<?php endif; ?>
 <p>
-    <? foreach ($sale->tags as $tag) : ?>
+    <?php foreach ($sale->tags as $tag) : ?>
         <a rel="nofollow" href="<?= Url::to(['/sale', 'tag' => $tag]) ?>" class="label label-info"><?= $tag ?></a>
-    <? endforeach; ?>
+    <?php endforeach; ?>
 </p>
 
 <small class="text-muted"><?= Yii::t('admin/sale', 'Просмотров:') ?> <?= $sale->views ?></small>

@@ -18,9 +18,9 @@ $historyUrl = Url::to(['/admin/'.$module.'/a/history']);
     </li>
     <li <?= ($action === 'history') ? 'class="active"' : '' ?>>
         <a href="<?= $historyUrl ?>">
-            <? if($action === 'edit') : ?>
+            <?php if($action === 'edit') : ?>
                 <i class="fa fa-chevron-left fs-12"></i>
-            <? endif; ?>
+            <?php endif; ?>
             <?= Yii::t('admin/subscribe', 'Рассылки') ?>
         </a>
     </li>

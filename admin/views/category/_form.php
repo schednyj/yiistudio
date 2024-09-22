@@ -31,24 +31,24 @@ if ($model->id) {
     <label for="category-parent" class="control-label"><?= Yii::t('admin', 'Родительская категория') ?></label>
     <select class="form-control" id="category-parent" name="parent">
         <option value="" class="text-muted"><?= Yii::t('admin', '(нет)') ?></option>
-        <? foreach ($parents as $node) : ?>
+        <?php foreach ($parents as $node) : ?>
             <option
                 value="<?= $node['id'] ?>"
-                <? if ($parent == $node['id']) echo 'SELECTED' ?>
+                <?php if ($parent == $node['id']) echo 'SELECTED' ?>
                 style="padding-left: <?= $node['depth'] * 20 ?>px;"
                 ><?= $node['title'] ?>
             </option>
-        <? endforeach; ?>
+        <?php endforeach; ?>
     </select>
 </div>
 
-<? if ($settings['categoryThumb']) : ?>
-    <? if ($model->image) : ?>
+<?php if ($settings['categoryThumb']) : ?>
+    <?php if ($model->image) : ?>
         <img src="<?= Image::thumb($model->image, 180) ?>">
         <a href="<?= Url::to(['/admin/' . $this->context->moduleName . '/a/clear-image', 'id' => $model->primaryKey]) ?>" class="text-danger text-red" title="<?= Yii::t('admin', 'Сбросить изображение') ?>"><?= Yii::t('admin', 'Сбросить изображение') ?></a>
-    <? endif; ?>
+    <?php endif; ?>
     <?= $form->field($model, 'image')->fileInput() ?>
-<? endif; ?>
+<?php endif; ?>
 
 <div class="row">
     <div class="col-md-6">
@@ -58,7 +58,7 @@ if ($model->id) {
         <?= $form->field($model, 'time')->widget(DateTimePicker::className()); ?>
     </div>
 </div>
-<? if (in_array('description', $model->attributes())) { ?>
+<?php if (in_array('description', $model->attributes())) { ?>
     <?=
     $form->field($model, 'description')->widget(Redactor::className(), [
         'options' => [
@@ -67,11 +67,11 @@ if ($model->id) {
         ]
     ])
     ?>       
-<? } ?>  
+<?php } ?>
 <?= SeoTextForm::widget(['model' => $model]) ?>
 <?= SeoTemplateForm::widget(['model' => $model]) ?>
 
 
 
 <?= Html::submitButton(Yii::t('admin', 'Сохранить'), ['class' => 'btn btn-primary']) ?>
-<? ActiveForm::end(); ?>
+<?php ActiveForm::end(); ?>

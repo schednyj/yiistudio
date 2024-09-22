@@ -12,7 +12,7 @@ $module = $this->context->module->id;
 
 <?= $this->render('_menu') ?>
 
-<? if ($data->count > 0) : ?>
+<?php if ($data->count > 0) : ?>
     <table class="table table-hover">
         <thead>
             <tr>
@@ -25,24 +25,24 @@ $module = $this->context->module->id;
             </tr>
         </thead>
         <tbody>
-            <? foreach ($data->models as $item) : ?>
+            <?php foreach ($data->models as $item) : ?>
                 <tr>
                     <td><?= $item->primaryKey ?></td>
                     <td>
-                        <? if ($item->new) : ?>
+                        <?php if ($item->new) : ?>
                             <span class="label label-warning">NEW</span>
-                        <? endif; ?>
+                        <?php endif; ?>
                         <a href="<?= Url::to(['/admin/' . $module . '/a/view', 'id' => $item->primaryKey]) ?>">
                             <?= ($item->title != '') ? $item->title : StringHelper::truncate($item->text, 120, '...') ?>
                         </a>
                     </td>
                     <td><?= Yii::$app->formatter->asDatetime($item->time, 'short') ?></td>
                     <td>
-                        <? if ($item->answer != '') : ?>
+                        <?php if ($item->answer != '') : ?>
                             <span class="text-success"><?= Yii::t('admin', 'Да') ?></span>
-                        <? else : ?>
+                        <?php else : ?>
                             <span class="text-danger"><?= Yii::t('admin', 'Нет') ?></span>
-                        <? endif; ?>
+                        <?php endif; ?>
                     </td>
                     <td class="status">
                         <?=
@@ -55,7 +55,7 @@ $module = $this->context->module->id;
                     </td>
                     <td class="control"><a href="<?= Url::to(['/admin/' . $module . '/a/delete', 'id' => $item->primaryKey]) ?>" class="fa fa-times text-red" title="<?= Yii::t('admin', 'Удалить запись') ?>"></a></td>
                 </tr>
-            <? endforeach; ?>
+            <?php endforeach; ?>
         </tbody>
     </table>
     <?=
@@ -63,6 +63,6 @@ $module = $this->context->module->id;
         'pagination' => $data->pagination
     ])
     ?>
-<? else : ?>
+<?php else : ?>
     <p><?= Yii::t('admin', 'Записи не найдены') ?></p>
-<? endif; ?>
+<?php endif; ?>

@@ -34,4 +34,4 @@ $form->field($model, 'description')->widget(Redactor::className(), [
 <?= $form->field($model, 'paymentsCheckboxList')->checkboxList(Payment::listAll('id', 'title'), ['separator' => '<br>'])->label(Yii::t('admin', 'Способы оплаты для данного типа доставки')); ?>
 
 <?= Html::submitButton(Yii::t('admin', 'Сохранить'), ['class' => 'btn btn-primary']) ?>
-<? ActiveForm::end(); ?>
+<?php ActiveForm::end(); ?>

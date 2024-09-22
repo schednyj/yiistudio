@@ -13,14 +13,14 @@ $this->title = Yii::t('admin/comment', 'Комментарий: {0}', $model->id
 ?>
 <?= $this->render('_menu') ?>
 
-<? $form = ActiveForm::begin(); ?>
+<?php $form = ActiveForm::begin(); ?>
 <p><?=
     $form->field($model, 'content')->widget(Redactor::className(), [
     ])
     ?>
-    <? echo $form->field($model, 'status')->dropDownList(Status::listData()); ?>
+    <?php echo $form->field($model, 'status')->dropDownList(Status::listData()); ?>
 </p>
 <p>
-    <? echo Html::submitButton(Yii::t('admin', 'Сохранить'), ['class' => 'btn btn-primary']) ?>
+    <?php echo Html::submitButton(Yii::t('admin', 'Сохранить'), ['class' => 'btn btn-primary']) ?>
 </p>
-<? ActiveForm::end(); ?>
+<?php ActiveForm::end(); ?>

@@ -13,22 +13,22 @@ $settings = Yii::$app->getModule('admin')->activeModules['article']->settings;
 
 <?= $item->text ?>
 
-<? if (count($item->photos)) : ?>
+<?php if (count($item->photos)) : ?>
     <?php
     SlickLightbox::begin([
     ]);
     ?>
-    <? foreach ($item->photos as $photo) : ?>
+    <?php foreach ($item->photos as $photo) : ?>
         <?= $photo->box(200, 200) ?>
-    <? endforeach; ?>
-    <? SlickLightbox::end(); ?>
+    <?php endforeach; ?>
+    <?php SlickLightbox::end(); ?>
     <br/>
-<? endif; ?>
+<?php endif; ?>
 <br>
 <p>
-    <? foreach ($item->tags as $tag) : ?>
+    <?php foreach ($item->tags as $tag) : ?>
         <a rel="nofollow" href="<?= Url::to(['/article', 'slug' => $item->category->slug, 'tag' => $tag]) ?>" class="label label-info"><?= $tag ?></a>
-    <? endforeach; ?>
+    <?php endforeach; ?>
 </p>
 <?php
 if ($settings['enableViews']) {

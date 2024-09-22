@@ -10,14 +10,14 @@ $total = 0;
 ?>
 
 
-<? if ($order->status == Order::STATUS_PENDING) {
+<?php if ($order->status == Order::STATUS_PENDING) {
     ?>
     <p>Здравствуйте!</p>
     <p>Ваш заказ <b>№<?= $order->primaryKey ?></b> создан.</p>
-<? } else { ?>
+<?php } else { ?>
     <p>Статус вашего заказа <b>№<?= $order->primaryKey ?></b> изменен.</p>
     <p>Новый статус: <b><?= $order->statusName ?></b></p>
-<? } ?>
+<?php } ?>
 <br>
 <table>
     <tr>
@@ -34,13 +34,13 @@ $total = 0;
         $price = $good->discount ? round($good->price * (1 - $good->discount / 100)) : $good->price;
         ?>
         <tr>
-            <td><? if ($good->item->image) {?><img src="<?= $message->embed(Yii::getAlias('@webroot') . DIRECTORY_SEPARATOR . Image::thumb($good->item->image, 45)); ?>"><? } ?></td>
+            <td><?php if ($good->item->image) {?><img src="<?= $message->embed(Yii::getAlias('@webroot') . DIRECTORY_SEPARATOR . Image::thumb($good->item->image, 45)); ?>"><?php } ?></td>
             <td><?= $good->item->title ?> <?= $good->options ? "($good->options)" : '' ?></td>
             <td><?= $good->count ?></td>
             <td><?= $price ?> руб.</td>
             <td><?= $good->count * $price ?> руб.</td>
         </tr>
-    <? endforeach ?>
+    <?php endforeach ?>
     <tr>
         <td colspan="5" align="right">
             Стоимость <?= $goods_total_count ?> товара(ов): <?= $order->cost ?> руб.
@@ -51,8 +51,8 @@ $total = 0;
 <p>
     Данные для доставки:<br>
     Телефон: <?= $order->phone; ?><br>
-    <? if ($order->address) { ?>Адрес: <?= $order->address; ?><? } ?><br>
-    <? if ($order->comment) { ?>Комментарий: <?= $order->comment; ?><? } ?><br>
+    <?php if ($order->address) { ?>Адрес: <?= $order->address; ?><?php } ?><br>
+    <?php if ($order->comment) { ?>Комментарий: <?= $order->comment; ?><?php } ?><br>
     Служба доставки: <?= $order->delivery_details ?> - <?= $order->delivery_cost ?> руб.<br>
     Способ оплаты: <?= $order->payment_details ?><br>
 </p>

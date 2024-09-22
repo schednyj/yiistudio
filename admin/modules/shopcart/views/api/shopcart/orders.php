@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = Yii::t('admin/shopcart', 'Заказы');
 
 <br>
 
-<? if (count($orders) > 0) : ?>
+<?php if (count($orders) > 0) : ?>
     <div class="row">
         <div class="col-md-12">
             <table class="table">
@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = Yii::t('admin/shopcart', 'Заказы');
                     </tr>
                 </thead>
                 <tbody>
-                    <? foreach ($orders as $order) : ?>
+                    <?php foreach ($orders as $order) : ?>
                         <tr>
                             <td><?= $order->date ?></td>
                             <td>
@@ -42,7 +42,7 @@ $this->params['breadcrumbs'][] = Yii::t('admin/shopcart', 'Заказы');
                             <td><?= $order->cost ?> <i class="fas fa-ruble-sign"></td>                            
                             <td><span class="label label-primary"><?= $order->paidStatus ?></span></td>
                         </tr>
-                    <? endforeach; ?>
+                    <?php endforeach; ?>
                     <tr>
                         <td colspan="6">                            
                             <?= $orders_pages ?>
@@ -52,6 +52,6 @@ $this->params['breadcrumbs'][] = Yii::t('admin/shopcart', 'Заказы');
             </table>            
         </div>
     </div>
-<? else : ?>
+<?php else : ?>
     <p><?= Yii::t('admin/shopcart', 'У Вас еще нет заказов') ?></p>
-<? endif; ?>
+<?php endif; ?>

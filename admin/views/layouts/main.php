@@ -10,7 +10,7 @@ $adminAsset = AdminAsset::register($this);
 
 $moduleName = $this->context->module->id;
 ?>
-<? $this->beginPage() ?>
+<?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
     <head>        
@@ -22,10 +22,10 @@ $moduleName = $this->context->module->id;
         <meta content="<?= Html::encode($this->params['keywords']) ?>" name="keywords">
         <link rel="shortcut icon" href="<?= $adminAsset->baseUrl ?>/favicon.ico" type="image/x-icon">
         <link rel="icon" href="<?= $adminAsset->baseUrl ?>/favicon.ico" type="image/x-icon">        
-        <? $this->head() ?>
+        <?php $this->head() ?>
     </head>
-    <body class="hold-transition skin-blue sidebar-mini <? if (Yii::$app->getSession()->has('sidebar_collapse')) { ?>sidebar-collapse<? } ?>">
-        <? $this->beginBody() ?>
+    <body class="hold-transition skin-blue sidebar-mini <?php if (Yii::$app->getSession()->has('sidebar_collapse')) { ?>sidebar-collapse<?php } ?>">
+        <?php $this->beginBody() ?>
         <div class="wrapper">
             <header class="main-header">
                 <a href="/admin" class="logo">
@@ -67,7 +67,7 @@ $moduleName = $this->context->module->id;
                     </form>
                     <ul class="sidebar-menu">
                         <li class="header text-uppercase"><?= Yii::t('admin', 'Модули') ?></li>
-                        <? foreach (Yii::$app->getModule('admin')->activeModules as $module) { ?>
+                        <?php foreach (Yii::$app->getModule('admin')->activeModules as $module) { ?>
 
                             <?php
                                 //Проверяем права по AuthManager
@@ -77,20 +77,20 @@ $moduleName = $this->context->module->id;
                             ?>
                             <li class="treeview <?= ($moduleName == $module->name ? 'active' : '') ?>">
                                 <a href="<?= Url::to(["/admin/$module->name"]) ?>">
-                                    <? if ($module->icon != '') : ?>
+                                    <?php if ($module->icon != '') : ?>
                                         <i class="fa fa-<?= $module->icon ?>"></i>
-                                    <? endif; ?>
+                                    <?php endif; ?>
                                     <span> <?= $module->title ?></span> 
-                                    <? if ($module->notice > 0 || is_array($module->settings['__submenu_module'])) : ?>
+                                    <?php if ($module->notice > 0 || is_array($module->settings['__submenu_module'])) : ?>
                                         <span class="pull-right-container">
-                                            <? if ($module->notice > 0) : ?>
+                                            <?php if ($module->notice > 0) : ?>
                                                 <small class="label pull-right bg-green"><?= $module->notice ?></small>
-                                            <? endif; ?>
-                                            <? if (is_array($module->settings['__submenu_module'])) : ?>
+                                            <?php endif; ?>
+                                            <?php if (is_array($module->settings['__submenu_module'])) : ?>
                                                 <i class="fa fa-angle-left pull-right"></i>
-                                            <? endif; ?>
+                                            <?php endif; ?>
                                         </span>
-                                    <? endif; ?>
+                                    <?php endif; ?>
                                 </a>
                                 <?php
                                 if (is_array($module->settings['__submenu_module'])) {
@@ -104,10 +104,10 @@ $moduleName = $this->context->module->id;
                                         }
                                         ?>
                                     </ul>
-                                <? } ?>
+                                <?php } ?>
                             </li>
-                        <? } ?>   
-                        <? if (Yii::$app->user->can('SuperAdmin')) { ?>
+                        <?php } ?>   
+                        <?php if (Yii::$app->user->can('SuperAdmin')) { ?>
                             <li class="header"><?= Yii::t('admin', 'СИСТЕМА') ?></li>                          
                             <li class="<?= ($moduleName == 'admin' && $this->context->id == 'modules') ? 'active' : '' ?>">
                                 <a href="<?= Url::to(['/admin/modules']) ?>">
@@ -159,7 +159,7 @@ $moduleName = $this->context->module->id;
                                     <span> <?= Yii::t('admin', 'Бэкапы') ?></span> 
                                 </a>
                             </li>
-                        <? } ?>
+                        <?php } ?>
                     </ul>
                 </section>
             </aside>
@@ -200,9 +200,9 @@ $moduleName = $this->context->module->id;
                 2017 - <?= date('Y') ?> <a href="https://yiistudio.ru" target="_blank" title="https://yiistudio.ru"><?= \admin\AdminModule::NAME ?></a> v<?= \admin\AdminModule::VERSION ?> 
             </footer>
         </div>
-        <? $this->endBody() ?>
-        <? AjaxModalPopup::renderModal() ?>
+        <?php $this->endBody() ?>
+        <?php AjaxModalPopup::renderModal() ?>
         <?= \admin\widgets\Counters::widget(); ?>
     </body>
 </html>
-<? $this->endPage() ?>
+<?php $this->endPage() ?>

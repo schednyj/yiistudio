@@ -67,15 +67,15 @@ if (count($group->items)) {
                 <div class="col-md-5 col-xs-5">
                     <p class="form-control-static">
                         <strong><?= $item->price ?> <i class="fas fa-ruble-sign"></i>
-                            <? if ($item->discount) { ?>
+                            <?php if ($item->discount) { ?>
                                 <del class="small"><?= $item->oldPrice ?></del>
-                            <? } ?>
+                            <?php } ?>
                         </strong>                            
                     </p>
                 </div>
-                <? if ($addToCartForm) { ?>
+                <?php if ($addToCartForm) { ?>
                     <div class="col-md-7 col-xs-7">
-                        <? if ($item->available) { ?>
+                        <?php if ($item->available) { ?>
                             <?php
                             $form = ActiveForm::begin(['action' => Url::to(['/shopcart/add', 'id' => $item->id]), 'options' => [
                                             'class' => 'form_add_to_cart text-right'
@@ -83,27 +83,27 @@ if (count($group->items)) {
                             ?>
                             <?= Html::hiddenInput('AddToCartForm[count]', $addToCartForm->count) ?>                           
                             <?= Html::submitButton('<i class="fa fa-shopping-cart"></i> В корзину', ['class' => 'btn btn-primary btn-sm fs-13']) ?>
-                            <? ActiveForm::end(); ?>
-                        <? } else { ?>
+                            <?php ActiveForm::end(); ?>
+                        <?php } else { ?>
                             <?= Yii::t('admin/catalog', 'Под заказ') ?>
-                        <? } ?>
+                        <?php } ?>
                     </div>
-                <? } ?>
+                <?php } ?>
             </div>
-            <? if ($item->new != 0) { ?>
+            <?php if ($item->new != 0) { ?>
                 <div class="new-sticker">
                     <a href="javascript:void(0);" rel="nofollow" title="<?= Yii::t('admin/catalog', 'Новинка!') ?>" class="no-text-decoration с-second">
                         <i class="fa fa-bookmark fs-20"></i> <?= Yii::t('admin/catalog', 'Новинка!') ?>
                     </a>
                 </div>
-            <? } ?>
-            <? if ($item->gift != 0) { ?>
+            <?php } ?>
+            <?php if ($item->gift != 0) { ?>
                 <div class="gift-sticker">
                     <a href="javascript:void(0);" rel="nofollow" title="<?= Yii::t('admin/catalog', 'К этому товару полагается подарок!') ?>" data-url="<?= Url::to(['/sale', 'slug' => $item->gift]) ?>" class="ajaxModalPopup no-text-decoration с-second">
                         <i class="fa fa-gift fs-20"></i> <?= Yii::t('admin/catalog', 'Подарок!') ?>
                     </a>
                 </div>
-            <? } ?>            
+            <?php } ?>            
         </div>
     </div>
     <?php

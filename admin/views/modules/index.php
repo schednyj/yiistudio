@@ -8,7 +8,7 @@ $this->title = Yii::t('admin', 'Модули');
 
 <?= $this->render('_menu') ?>
 
-<? if($data->count > 0) : ?>
+<?php if($data->count > 0) : ?>
     <table class="table table-hover">
         <thead>
         <tr>
@@ -21,15 +21,15 @@ $this->title = Yii::t('admin', 'Модули');
         </tr>
         </thead>
         <tbody>
-        <? foreach($data->models as $module) : ?>
+        <?php foreach($data->models as $module) : ?>
             <tr>
                 <td><?= $module->primaryKey ?></td>
                 <td><a href="<?= Url::to(['/admin/modules/edit', 'id' => $module->primaryKey]) ?>" title="<?= Yii::t('admin', 'Редактировать') ?>"><?= $module->name ?></a></td>
                 <td><?= $module->title ?></td>
                 <td>
-                    <? if($module->icon) : ?>
+                    <?php if($module->icon) : ?>
                         <span class="fa fa-<?= $module->icon ?>"></span> <?= $module->icon ?>
-                    <? endif; ?>
+                    <?php endif; ?>
                 </td>
                 <td class="status">
                     <?= Html::checkbox('', $module->status == Module::STATUS_ON, [
@@ -48,12 +48,12 @@ $this->title = Yii::t('admin', 'Модули');
                     </div>
                 </td>
             </tr>
-        <? endforeach; ?>
+        <?php endforeach; ?>
         </tbody>
         <?= yii\widgets\LinkPager::widget([
             'pagination' => $data->pagination
         ]) ?>
     </table>
-<? else : ?>
+<?php else : ?>
     <p><?= Yii::t('admin', 'Записи не найдены') ?></p>
-<? endif; ?>
+<?php endif; ?>

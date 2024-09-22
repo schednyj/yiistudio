@@ -38,7 +38,7 @@ $form->field($model, 'description')->widget(Redactor::className(), [
 ])
 ?>
 
-<? $model->renderDataForm(); ?>
+<?php $model->renderDataForm(); ?>
 
 
 <div class="row">
@@ -49,11 +49,11 @@ $form->field($model, 'description')->widget(Redactor::className(), [
         
     </div>
     <div class="col-md-2">
-        <? if (Yii::$app->user->can("SuperAdmin")) { ?> <a href="<?= Url::to(['/admin/payment/a/default-data', 'id' => $model->id]) ?>" class="btn btn-warning  btn-block"><i class="fa fa-flash"></i> <?= Yii::t('admin', 'Настройки по-умолчанию') ?></a><? } ?>
+        <?php if (Yii::$app->user->can("SuperAdmin")) { ?> <a href="<?= Url::to(['/admin/payment/a/default-data', 'id' => $model->id]) ?>" class="btn btn-warning  btn-block"><i class="fa fa-flash"></i> <?= Yii::t('admin', 'Настройки по-умолчанию') ?></a><?php } ?>
     </div>
 </div>
-<? ActiveForm::end(); ?>
-<? if (Yii::$app->user->can("SuperAdmin")) { ?> 
+<?php ActiveForm::end(); ?>
+<?php if (Yii::$app->user->can("SuperAdmin")) { ?> 
     <div class="row mt-75">
         <?= Html::beginForm(Url::to(['/admin/payment/a/test', 'id' => $model->id]), 'post') ?>
         <div class="col-md-6">
@@ -70,4 +70,4 @@ $form->field($model, 'description')->widget(Redactor::className(), [
         </div>
         <?= Html::endForm() ?>
     </div>
-<? } ?>
+<?php } ?>

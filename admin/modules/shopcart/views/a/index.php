@@ -10,7 +10,7 @@ $this->title = Yii::t('admin/shopcart', 'Заказы');
 $module = $this->context->module->id;
 ?>
 <?= $this->render('_menu') ?>
-<? if ($data->count > 0) : ?>
+<?php if ($data->count > 0) : ?>
     <table class="table table-hover">
         <thead>
             <tr>
@@ -27,14 +27,14 @@ $module = $this->context->module->id;
             </tr>
         </thead>
         <tbody>
-            <? foreach ($data->models as $item) : ?>
+            <?php foreach ($data->models as $item) : ?>
                 <tr>
                     <td>
                         <?= Html::a(Yii::t('admin/shopcart', 'Заказ') . ' №' . $item->primaryKey, ['/admin/shopcart/a/edit', 'id' => $item->primaryKey]) ?>
                     </td>
-                    <td><? if ($item->new) : ?>
+                    <td><?php if ($item->new) : ?>
                             <span class="label label-warning"><?= Yii::t('admin/shopcart', 'НОВЫЙ!') ?></span>
-                        <? endif; ?></td>
+                        <?php endif; ?></td>
                     <td><?= Yii::$app->formatter->asDatetime($item->time, 'short') ?></td>
                     <td><?= $item->renderStatus() ?></td>
                     <td><?= $item->email ?></td>
@@ -46,7 +46,7 @@ $module = $this->context->module->id;
                         <a href="<?= Url::to(['/admin/' . $module . '/a/delete', 'id' => $item->primaryKey]) ?>" class="text-red" title="<?= Yii::t('admin', 'Удалить запись') ?>"><span class="fa fa-times"></span></a>
                     </td>
                 </tr>
-            <? endforeach; ?>
+            <?php endforeach; ?>
         </tbody>
     </table>
     <?=
@@ -54,6 +54,6 @@ $module = $this->context->module->id;
         'pagination' => $data->pagination
     ])
     ?>
-<? else : ?>
+<?php else : ?>
     <p><?= Yii::t('admin', 'Записи не найдены') ?></p>
-<? endif; ?>
+<?php endif; ?>

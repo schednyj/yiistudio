@@ -18,5 +18,5 @@ $form = ActiveForm::begin([
         ]);
 ?>
 
-<? $form->end(); ?>
+<?php $form->end(); ?>
 

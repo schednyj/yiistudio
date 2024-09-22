@@ -32,7 +32,7 @@ if ($settings['enableCaptcha'])
     echo $form->field($model, 'reCaptcha')->widget(ReCaptcha::className());
 ?>
 <?= Html::submitButton(Yii::t('admin', 'Отправить'), ['class' => 'btn btn-primary']) ?>
-<? ActiveForm::end(); ?>
+<?php ActiveForm::end(); ?>
 <?php
 
 $js = <<<SCRIPT

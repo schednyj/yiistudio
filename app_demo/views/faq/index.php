@@ -10,7 +10,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
 <h1><?= $page->seo('h1', $page->title) ?></h1>
 <br/>
 
-<? foreach(Faq::items() as $item) : ?>
+<?php foreach(Faq::items() as $item) : ?>
     <p><b>Вопрос: </b><?= $item->question ?></p>
     <blockquote><b>Ответ: </b><?= $item->answer ?></blockquote>
-<? endforeach; ?>
+<?php endforeach; ?>

@@ -11,7 +11,7 @@ $module = $this->context->module->id;
 
 <?= $this->render('_menu') ?>
 
-<? if ($data->count > 0) : ?>
+<?php if ($data->count > 0) : ?>
     <table class="table table-hover">
         <thead>
             <tr>
@@ -22,7 +22,7 @@ $module = $this->context->module->id;
             </tr>
         </thead>
         <tbody>
-            <? foreach ($data->models as $item) : ?>
+            <?php foreach ($data->models as $item) : ?>
                 <tr data-id="<?= $item->primaryKey ?>">
                     <td><?= $item->primaryKey ?></td>
                     <td><a href="<?= Url::to(['/admin/' . $module . '/a/edit', 'id' => $item->primaryKey]) ?>"><?= $item->title ?></a></td>
@@ -43,7 +43,7 @@ $module = $this->context->module->id;
                         </div>
                     </td>
                 </tr>
-            <? endforeach; ?>
+            <?php endforeach; ?>
         </tbody>
     </table>
     <?=
@@ -51,6 +51,6 @@ $module = $this->context->module->id;
         'pagination' => $data->pagination
     ])
     ?>
-<? else : ?>
+<?php else : ?>
     <p><?= Yii::t('admin', 'Записи не найдены') ?></p>
-<? endif; ?>
+<?php endif; ?>

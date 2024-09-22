@@ -95,9 +95,9 @@ $form = ActiveForm::begin([
         <a class="btn btn-danger" href="<?= Url::to(['/admin/' . $module . '/import/execute', 'id' => $model->primaryKey, 'full' => 1]) ?>" title="<?= Yii::t('admin', 'Выполнить импорт') ?>"><span class="fa fa-file-excel"></span> <?= Yii::t('admin', 'Выполнить импорт') ?></a>
     </div>
 </div>
-<? ActiveForm::end(); ?>
+<?php ActiveForm::end(); ?>
 
-<? $form = ActiveForm::begin(['action' => Url::to(['/admin/' . $module . '/import/load-items-from-excel-file', 'id' => $model->primaryKey]), 'options' => ['enctype' => 'multipart/form-data']]) ?>
+<?php $form = ActiveForm::begin(['action' => Url::to(['/admin/' . $module . '/import/load-items-from-excel-file', 'id' => $model->primaryKey]), 'options' => ['enctype' => 'multipart/form-data']]) ?>
 
 <?= $form->field($model, 'importFile')->fileInput()->label(Yii::t('admin/yml', 'Укажите excel файл')) ?>
 
@@ -108,4 +108,4 @@ $form = ActiveForm::begin([
     </div>
 </div>
 
-<? ActiveForm::end() ?>
+<?php ActiveForm::end() ?>

@@ -57,12 +57,12 @@ $photoTemplate = str_replace('&nbsp;\\', '&nbsp;', $photoTemplate);
         </tr>
     </thead>
     <tbody>
-        <? foreach ($photos as $photo) : ?>
+        <?php foreach ($photos as $photo) : ?>
             <?=
             str_replace(
                     ['{{id}}', '{{photo_thumb}}', '{{photo_image}}', '{{photo_description}}'], [$photo->primaryKey, Image::thumb($photo->image, Photo::PHOTO_THUMB_WIDTH, Photo::PHOTO_THUMB_HEIGHT), $photo->image, $photo->description], $photoTemplate)
             ?>
-        <? endforeach; ?>
+        <?php endforeach; ?>
     </tbody>
 </table>
 <div class="row mb-20">
@@ -80,4 +80,4 @@ Html::fileInput('', null, [
     'multiple' => 'multiple',
 ])
 ?>
-<? Html::endForm() ?>
+<?php Html::endForm() ?>

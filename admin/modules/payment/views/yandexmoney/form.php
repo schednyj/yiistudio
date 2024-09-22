@@ -31,7 +31,7 @@ use admin\models\Setting;
             $active = '';
         }
         ?>
-        <? if ($settings['paymentTypePC']) { ?>
+        <?php if ($settings['paymentTypePC']) { ?>
             <label class="btn btn-default <?= $active ?>"><input type="radio" name="paymentType" <?= $checked ?> value="PC"><i class="fa fa-money"></i> Яндекс.Деньгами</label>
             <?php
             $checked = '';
@@ -39,7 +39,7 @@ use admin\models\Setting;
         }
         ?>
 
-        <? if ($settings['paymentTypeMC']) { ?>
+        <?php if ($settings['paymentTypeMC']) { ?>
             <label class="btn btn-default <?= $active ?>"><input type="radio" name="paymentType" <?= $checked ?> value="MC"><i class="fa fa-phone"></i> Со счета мобильного</label> 
                 <?php
                 $checked = '';

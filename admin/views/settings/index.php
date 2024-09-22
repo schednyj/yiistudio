@@ -8,7 +8,7 @@ $this->title = Yii::t('admin', 'Настройки');
 
 <?= $this->render('_menu') ?>
 
-<? if ($data->count > 0) : ?>
+<?php if ($data->count > 0) : ?>
     <table class="table table-hover">
         <thead>
             <tr>
@@ -21,15 +21,15 @@ $this->title = Yii::t('admin', 'Настройки');
             </tr>
         </thead>
         <tbody>
-            <? foreach ($data->models as $setting) : ?>
-                <tr <? if ($setting->visibility == Setting::VISIBLE_ROOT) echo 'class="warning"' ?>>
+            <?php foreach ($data->models as $setting) : ?>
+                <tr <?php if ($setting->visibility == Setting::VISIBLE_ROOT) echo 'class="warning"' ?>>
                     <td><?= $setting->primaryKey ?></td>
                     <td><a href="<?= Url::to(['/admin/settings/edit', 'id' => $setting->primaryKey]) ?>" title="<?= Yii::t('admin', 'Редактировать') ?>"><?= $setting->title ?></a></td>
                     <td><?= $setting->name ?></td>
                     <td style="overflow: hidden"><?= $setting->value ?></td>
                     <td><a href="<?= Url::to(['/admin/settings/delete', 'id' => $setting->primaryKey]) ?>" class="fa fa-times text-red" title="<?= Yii::t('admin', 'Удалить запись') ?>"></a></td>
                 </tr>
-            <? endforeach; ?>
+            <?php endforeach; ?>
         </tbody>
         <?=
         yii\widgets\LinkPager::widget([
@@ -37,9 +37,9 @@ $this->title = Yii::t('admin', 'Настройки');
         ])
         ?>
     </table>
-<? else : ?>
+<?php else : ?>
     <p><?= Yii::t('admin', 'Записи не найдены') ?></p>
-<? endif; ?>
+<?php endif; ?>
 <br>
 <br>
 <a href="<?= Url::to(['/admin/settings/update-settings']) ?>" class="pull-right text-warning"><i class="glyphicon glyphicon-flash"></i> <?= Yii::t('admin', 'Обновить настройки') ?></a>

@@ -56,14 +56,14 @@ $this->params['keywords'] = $page->seo('keywords');
         }
     }
     ?>
-    <? Slick::end(); ?>
+    <?php Slick::end(); ?>
 </div>
 <div class="row">
     <div class="col-md-12">
         <div class="row">
             <div class="col-md-10">
                 <ul class="list-unstyled">
-                    <? foreach (News::last(4) as $news) { ?>
+                    <?php foreach (News::last(4) as $news) { ?>
                         <li>      
                             <div class="row">
                                 <div class="col-md-2"><span class="text-nowrap"><i class="fa fa-clock-o"></i> <?= $news->date ?></span></div>
@@ -72,7 +72,7 @@ $this->params['keywords'] = $page->seo('keywords');
                                 </div>
                             </div>
                         </li>
-                    <? } ?>
+                    <?php } ?>
                 </ul>
             </div>
             <div class="col-md-2 text-right">
@@ -115,9 +115,9 @@ $this->params['keywords'] = $page->seo('keywords');
                 <div class="row">
                     <div class="col-md-12">
                         <div class="border p-20 bg-first">
-                            <? foreach ($category->brands() as $brand) { ?>
+                            <?php foreach ($category->brands() as $brand) { ?>
                                 <div class="fs-16 mb-5"><a href="<?= Url::to(['/brand', 'slug' => $brand->slug]) ?>"><?= $brand->title ?></a></div>
-                            <? } ?>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
@@ -137,17 +137,17 @@ $this->params['keywords'] = $page->seo('keywords');
                                 }
                                 ?>
                                 <?= $this->render('@admin/modules/catalog/views/api/catalog/_item', ['item' => $item, 'addToCartForm' => new \app_demo\models\AddToCartForm(), 'last' => $last]) ?>
-                            <? } ?>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
                 <div class="sidebar-header sidebar-header-lg"><?= Yii::t('app', 'Новинки') ?></div>                
                 <div class="row"> 
-                    <? foreach (Catalog::groups_last(4) as $group) : ?>            
+                    <?php foreach (Catalog::groups_last(4) as $group) : ?>
                         <?php
                         echo $this->render('@admin/modules/catalog/views/api/catalog/_group', ['group' => $group, 'addToCartForm' => new \app_demo\models\AddToCartForm()])
                         ?>
-                    <? endforeach; ?>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>

@@ -15,7 +15,7 @@ $this->title = Yii::t('admin/comment', 'Комментарии');
 ?>
 <?= $this->render('_menu') ?>
 <div class="comment-index">
-    <? Pjax::begin(['timeout' => 10000]); ?>
+    <?php Pjax::begin(['timeout' => 10000]); ?>
     <?php
     echo GridView::widget([
         'condensed' => true,
@@ -68,5 +68,5 @@ $this->title = Yii::t('admin/comment', 'Комментарии');
         ],
     ]);
     ?>
-    <? Pjax::end(); ?>
+    <?php Pjax::end(); ?>
 </div>

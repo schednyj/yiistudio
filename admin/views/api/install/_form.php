@@ -5,7 +5,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 ?>
 <div class="text-left"> 
-<? $form = ActiveForm::begin(['action' => Url::to('/admin/api/install')]); ?>
+<?php $form = ActiveForm::begin(['action' => Url::to('/admin/api/install')]); ?>
 
 <?= $form->field($model, 'admin_email') ?>
 <?= $form->field($model, 'admin_password') ?>
@@ -25,4 +25,4 @@ use yii\helpers\Url;
 </div>
 <br>
 <?= Html::submitButton(Yii::t('admin','Установить'), ['class' => 'btn btn-lg btn-primary btn-block']) ?>
-<? ActiveForm::end(); ?>
+<?php ActiveForm::end(); ?>

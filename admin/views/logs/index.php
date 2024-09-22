@@ -4,7 +4,7 @@ $this->title = Yii::t('admin', 'Логи');
 
 <?= $this->render('_menu') ?>
 
-<? if($data->count > 0) : ?>
+<?php if($data->count > 0) : ?>
     <table class="table table-hover">
         <thead>
         <tr>
@@ -17,7 +17,7 @@ $this->title = Yii::t('admin', 'Логи');
         </tr>
         </thead>
         <tbody>
-        <? foreach($data->models as $log) : ?>
+        <?php foreach($data->models as $log) : ?>
             <tr <?= !$log->success ? 'class="danger"' : ''?>>
                 <td><?= $log->primaryKey ?></td>
                 <td><?= $log->email ?></td>
@@ -26,12 +26,12 @@ $this->title = Yii::t('admin', 'Логи');
                 <td><?= $log->user_agent ?></td>
                 <td><?= Yii::$app->formatter->asDatetime($log->time, 'medium') ?></td>
             </tr>
-        <? endforeach; ?>
+        <?php endforeach; ?>
         </tbody>
     </table>
     <?= yii\widgets\LinkPager::widget([
         'pagination' => $data->pagination
     ]) ?>
-<? else : ?>
+<?php else : ?>
     <p><?= Yii::t('admin', 'Записи не найдены') ?></p>
-<? endif; ?>
+<?php endif; ?>

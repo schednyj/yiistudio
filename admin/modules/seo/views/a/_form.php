@@ -22,4 +22,4 @@ $form = ActiveForm::begin([
 <?= $form->field($model, 'description')->textarea() ?>
 <?= $form->field($model, 'keywords')->textarea() ?>
 <?= Html::submitButton(Yii::t('admin', 'Сохранить'), ['class' => 'btn btn-primary']) ?>
-<? ActiveForm::end(); ?>
+<?php ActiveForm::end(); ?>

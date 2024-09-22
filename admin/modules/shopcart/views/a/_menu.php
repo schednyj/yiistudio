@@ -16,69 +16,69 @@ $blankUrl = Url::to(['/admin/'.$module.'/a/blank']);
 <ul class="nav nav-pills">
     <li <?= ($action === 'index') ? 'class="active"' : '' ?>>
         <a href="<?= $indexUrl ?>">
-            <? if($backTo === 'index') : ?>
+            <?php if($backTo === 'index') : ?>
                 <i class="glyphicon glyphicon-chevron-left fs-12"></i>
-            <? endif; ?>
+            <?php endif; ?>
             <?= Yii::t('admin/shopcart', 'Все') ?>
-            <? if($this->context->all > 0) : ?>
+            <?php if($this->context->all > 0) : ?>
                 <span class="badge"><?= $this->context->all ?></span>
-            <? endif; ?>
+            <?php endif; ?>
         </a>
     </li>
     <li <?= ($action === 'pending') ? 'class="active"' : '' ?>>
         <a href="<?= $pendingUrl ?>">
-            <? if($backTo === 'pending') : ?>
+            <?php if($backTo === 'pending') : ?>
                 <i class="glyphicon glyphicon-chevron-left fs-12"></i>
-            <? endif; ?>
+            <?php endif; ?>
             <?= Yii::t('admin/shopcart', 'В обработке') ?>
-            <? if($this->context->pending > 0) : ?>
+            <?php if($this->context->pending > 0) : ?>
                 <span class="badge"><?= $this->context->pending ?></span>
-            <? endif; ?>
+            <?php endif; ?>
         </a>
     </li>
     <li <?= ($action === 'processed') ? 'class="active"' : '' ?>>
         <a href="<?= $processedUrl ?>">
-            <? if($backTo === 'processed') : ?>
+            <?php if($backTo === 'processed') : ?>
                 <i class="glyphicon glyphicon-chevron-left fs-12"></i>
-            <? endif; ?>
+            <?php endif; ?>
             <?= Yii::t('admin/shopcart', 'Обработан') ?>
-            <? if($this->context->processed > 0) : ?>
+            <?php if($this->context->processed > 0) : ?>
                 <span class="badge"><?= $this->context->processed ?></span>
-            <? endif; ?>
+            <?php endif; ?>
         </a>
     </li>
     <li <?= ($action === 'sent') ? 'class="active"' : '' ?>>
         <a href="<?= $sentUrl ?>">
-            <? if($backTo === 'sent') : ?>
+            <?php if($backTo === 'sent') : ?>
                 <i class="glyphicon glyphicon-chevron-left fs-12"></i>
-            <? endif; ?>
+            <?php endif; ?>
             <?= Yii::t('admin/shopcart', 'Отправлен') ?>
-            <? if($this->context->sent > 0) : ?>
+            <?php if($this->context->sent > 0) : ?>
                 <span class="badge"><?= $this->context->sent ?></span>
-            <? endif; ?>
+            <?php endif; ?>
         </a>
     </li>
     <li <?= ($action === 'completed') ? 'class="active"' : '' ?>>
         <a href="<?= $completedUrl ?>">
-            <? if($backTo === 'completed') : ?>
+            <?php if($backTo === 'completed') : ?>
                 <i class="glyphicon glyphicon-chevron-left fs-12"></i>
-            <? endif; ?>
+            <?php endif; ?>
             <?= Yii::t('admin/shopcart', 'Выполнен') ?>
         </a>
     </li>
     <li <?= ($action === 'fails') ? 'class="active"' : '' ?>>
         <a href="<?= $failsUrl ?>">
-            <? if($backTo === 'fails') : ?>
+            <?php if($backTo === 'fails') : ?>
                 <i class="glyphicon glyphicon-chevron-left fs-12"></i>
-            <? endif; ?>
+            <?php endif; ?>
             <?= Yii::t('admin/shopcart', 'Ошибка') ?>
         </a>
     </li>
     <li <?= ($action === 'blank') ? 'class="active"' : '' ?>>
         <a href="<?= $blankUrl ?>">
-            <? if($backTo === 'blank') : ?>
+            <?php if($backTo === 'blank') : ?>
                 <i class="glyphicon glyphicon-chevron-left fs-12"></i>
-            <? endif; ?>
+            <?php endif; ?>
             <?= Yii::t('admin/shopcart', 'Корзины') ?>
         </a>
     </li>

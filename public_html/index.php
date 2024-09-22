@@ -2,6 +2,8 @@
 //Yii Studio 
 //https://yiistudio.ru
 
+error_reporting(E_ALL & ~E_NOTICE);
+
 //ВНИМАНИЕ!
 //Для установки измените на false
 //После установки измените на true

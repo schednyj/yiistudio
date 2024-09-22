@@ -6,7 +6,7 @@ AdminLteAsset::register($this);
 PublicAsset::register($this);
 $appAsset = Yii::$app->assetManager->getBundle('admin\assets\AdminAsset');
 ?>
-<? $this->beginContent('@admin/views/layouts/base.php'); ?>
+<?php $this->beginContent('@admin/views/layouts/base.php'); ?>
 <div class="login-box">    
     <div class="login-box-body text-center">
         <div class="logo">
@@ -18,4 +18,4 @@ $appAsset = Yii::$app->assetManager->getBundle('admin\assets\AdminAsset');
         <?= $content ?>
     </div>
 </div>
-<? $this->endContent(); ?>
+<?php $this->endContent(); ?>

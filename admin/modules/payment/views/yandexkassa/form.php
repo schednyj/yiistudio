@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 ?>
 
-<? ActiveForm::begin(['action' => 'https://' . $settings['mode'] . '.yandex.ru/eshop.xml']) ?>
+<?php ActiveForm::begin(['action' => 'https://' . $settings['mode'] . '.yandex.ru/eshop.xml']) ?>
 
 <?= Html::hiddenInput('shopId', $settings['shopid']) ?>
 <?= Html::hiddenInput('scid', $settings['scid']) ?>
@@ -18,4 +18,4 @@ use yii\widgets\ActiveForm;
 <?= Html::hiddenInput('shopFailURL', Yii::$app->urlManager->createAbsoluteUrl(['admin/payment/fail', 'id' => $order->id])) ?>
 <?= Html::submitButton(Yii::t('admin/payment', 'Оплатить заказ'), ['class' => 'btn btn-lg btn-success']) ?>
 
-<? ActiveForm::end(); ?>
+<?php ActiveForm::end(); ?>

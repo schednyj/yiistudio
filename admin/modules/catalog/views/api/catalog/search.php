@@ -17,14 +17,14 @@ $this->params['breadcrumbs'][] = $page->title;
         <?= $this->render('_search_form', ['text' => $text]) ?>
     </div>
 </div>
-<? if ($error) : ?>
+<?php if ($error) : ?>
     <div class="row">
         <div class="col-md-12">
             <?= $error ?>
         </div>
     </div>
-<? else : ?>
-    <? if (count($items)) : ?>
+<?php else : ?>
+    <?php if (count($items)) : ?>
         <div class="row mb-20">
             <div class="col-md-12">
                 <?=
@@ -36,28 +36,28 @@ $this->params['breadcrumbs'][] = $page->title;
                 ?>
             </div>
         </div>
-        <? foreach ($items as $item){ ?>
+        <?php foreach ($items as $item){ ?>
             <div class="row mb-10">
                 <div class="col-md-2">
-                    <? if (!empty($item->image)) {
+                    <?php if (!empty($item->image)) {
                         ?>
                         <a href="<?= Url::to(['/catalog/item', 'category' => $item->category->slug, 'slug' => $item->slug]) ?>" rel="nofollow" class="display-block" style="width:90px;" title="<?= $item->title ?>">
                             <div class="square bgn-center border" style="background-image:url('<?= $item->thumb(90, 90) ?>');">
                             </div>
                         </a>
-                    <? } ?>
+                    <?php } ?>
                 </div>
                 <div class="col-md-10">                    
                     <?= Html::a($item->title, ['/catalog/item', 'category' => $item->category->slug, 'slug' => $item->slug]) ?>
                     <br>
                     <strong><?= $item->price ?> <i class="fas fa-ruble-sign"></i>
-                        <? if ($item->discount) { ?>
+                        <?php if ($item->discount) { ?>
                             <del class="small"><?= $item->oldPrice ?></del>
-                        <? } ?>
+                        <?php } ?>
                     </strong>
                 </div>
             </div>     
-        <? } ?>
+        <?php } ?>
         <div class="row mt-25">
             <div class="col-md-12">
                 <?=
@@ -69,8 +69,8 @@ $this->params['breadcrumbs'][] = $page->title;
                 ?>
             </div>
         </div>
-    <? else : ?>
+    <?php else : ?>
         <p><?= Yii::t('admin/catalog', 'Сожалеем, ничего не найдено! Попробуйте, поискать еще.') ?></p>
-    <? endif; ?>
-<? endif; ?>
+    <?php endif; ?>
+<?php endif; ?>
     

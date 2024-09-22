@@ -3,7 +3,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use admin\widgets\Redactor;
 ?>
-<? $form = ActiveForm::begin([
+<?php $form = ActiveForm::begin([
     'options' => ['class' => 'model-form']
 ]); ?>
 <?= $form->field($model, 'question')->widget(Redactor::className(),[
@@ -22,4 +22,4 @@ use admin\widgets\Redactor;
 ]) ?>
 
 <?= Html::submitButton(Yii::t('admin', 'Сохранить'), ['class' => 'btn btn-primary']) ?>
-<? ActiveForm::end(); ?>
+<?php ActiveForm::end(); ?>

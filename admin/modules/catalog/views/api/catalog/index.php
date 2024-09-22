@@ -69,18 +69,18 @@ $this->params['breadcrumbs'][] = $title;
                             $form = ActiveForm::begin(['method' => 'get', 'action' => Url::to(['/catalog', 'slug' => $category->slug])]);
                         }
                         ?>
-                        <? if (!$brand) { ?>
+                        <?php if (!$brand) { ?>
                             <?= $form->field($filterForm, 'brand_id')->checkboxList($category->brandsOptions(), ['separator' => '<br>', 'itemOptions' => ['labelOptions' => ['class' => 'filter-checkbox-label']]]); ?>
-                        <? } ?>
+                        <?php } ?>
                         <label class="control-label"><?= Yii::t('admin/catalog', 'Цена') ?></label>
                         <?= $form->field($filterForm, 'price_from', ['template' => "{input}"])->textInput(['class' => 'form-control input-sm', 'placeholder' => Yii::t('admin/catalog', 'От')])->label() ?>
                         <?= $form->field($filterForm, 'price_to', ['template' => "{input}"])->textInput(['class' => 'form-control input-sm', 'placeholder' => Yii::t('admin/catalog', 'До')])->label() ?>
                         <?= Html::submitButton('Применить', ['class' => 'btn btn-primary btn-block ']) ?>
-                        <? ActiveForm::end(); ?>
+                        <?php ActiveForm::end(); ?>
                     </div> 
                 </div>    
             </noindex>
-            <div class="col-ss-12 <? if (count($menu_items) > 0) { ?> col-xs-12 <? } else { ?> col-xs-6 <? } ?> col-sm-12 col-md-12">
+            <div class="col-ss-12 <?php if (count($menu_items) > 0) { ?> col-xs-12 <?php } else { ?> col-xs-6 <?php } ?> col-sm-12 col-md-12">
                 <div class="mb-20">
 <?php
 Slick::begin([
@@ -113,7 +113,7 @@ Slick::begin([
                         <?php
                     }
                     ?>
-                    <? Slick::end(); ?>
+                    <?php Slick::end(); ?>
                 </div>
             </div>
 
@@ -130,12 +130,12 @@ $this->render('@admin/modules/catalog/views/api/catalog/_category', [
     'pagination' => $pagination,
 ])
 ?>
-        <? if ($showDescription) { ?>
+        <?php if ($showDescription) { ?>
             <div class="row">
                 <div class="col-md-12 text-justify">
     <?= $category->description ?>
                 </div>
             </div>
-<? } ?>
+<?php } ?>
     </div>    
 </div>

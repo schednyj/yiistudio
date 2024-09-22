@@ -24,15 +24,15 @@ $this->registerAssetBundle(ImageSwapAsset::className());
     </div>
 </div>
 <div class="row">
-<? if (count($groups)) : ?>
-        <? foreach ($groups as $group) : ?>
+<?php if (count($groups)) : ?>
+        <?php foreach ($groups as $group) : ?>
             <?= $this->render('@admin/modules/catalog/views/api/catalog/_group', ['group' => $group, 'addToCartForm' => $addToCartForm]) ?>
-        <? endforeach; ?>
-    <? else : ?>
+        <?php endforeach; ?>
+    <?php else : ?>
         <div class="col-md-12">
         <?= Yii::t('admin/catalog', 'Нет элементов для отображения') ?>
         </div>
-        <? endif; ?>
+        <?php endif; ?>
 </div>
 <div class="row">
     <div class="col-md-12 mb-20 text-right  text-left-sm">

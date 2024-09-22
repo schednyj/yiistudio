@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 ?>
-<? if (count($goods)) : ?>
+<?php if (count($goods)) : ?>
     <div class="row mb-20">
 
         <?php
@@ -17,16 +17,16 @@ use yii\helpers\Url;
             </div>
             <div class="col-md-2">
                 <h3>                                           
-                    <? if ($good->discount) : ?>
+                    <?php if ($good->discount) : ?>
                         <del class="text-muted"><small><?= $good->oldPrice ?></small></del>
-                    <? endif; ?>
+                    <?php endif; ?>
                             <?= $good->price ?> <i class="fas fa-ruble-sign"></i>                    
                 </h3>
             </div>
-        <? endforeach; ?>
+        <?php endforeach; ?>
     </div>           
     </div>
     <?= $this->render('_create_order', ['orderForm' => $orderForm,'fast' => true]) ?>
-<? else : ?>
+<?php else : ?>
     <p><?= Yii::t('admin/shopcart', 'В корзине пока еще нет товаров') ?></p>
-<? endif; ?>
+<?php endif; ?>

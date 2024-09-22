@@ -19,5 +19,5 @@ $form = ActiveForm::begin([
 <?= $form->field($model, 'email')->textInput(['class' => 'form-control', 'placeholder' => Yii::t('admin', 'E-mail')]) ?>
 <?= $form->field($model, 'password')->passwordInput(['class' => 'form-control', 'placeholder' => Yii::t('admin', 'Пароль')]) ?>
 <?= Html::submitButton(Yii::t('admin', 'Логин'), ['class' => 'btn btn-lg btn-primary btn-block']) ?>
-<? ActiveForm::end(); ?>
+<?php ActiveForm::end(); ?>
                

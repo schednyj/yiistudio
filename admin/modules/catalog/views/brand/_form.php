@@ -15,10 +15,10 @@ $form = ActiveForm::begin([
 ?>
 <?= $form->field($model, 'title') ?>
 
-<? if ($model->image) : ?>
+<?php if ($model->image) : ?>
     <img src="<?= Image::thumb($model->image, 180) ?>">
     <a href="<?= Url::to(['/admin/' . $this->context->module->id . '/brand/clear-image', 'id' => $model->primaryKey]) ?>" class="text-danger text-red" title="<?= Yii::t('admin', 'Сбросить изображение') ?>"><?= Yii::t('admin', 'Сбросить изображение') ?></a>
-<? endif; ?>
+<?php endif; ?>
 <?= $form->field($model, 'image')->fileInput() ?>
 
 <?= $form->field($model, 'slug') ?>
@@ -35,4 +35,4 @@ $form->field($model, 'description')->widget(Redactor::className(), [
 ?>
 
 <?= Html::submitButton(Yii::t('admin', 'Сохранить'), ['class' => 'btn btn-primary']) ?>
-<? ActiveForm::end(); ?>
+<?php ActiveForm::end(); ?>

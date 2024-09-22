@@ -32,13 +32,13 @@ $("#order-status").change(function(){
         <h3><?= Yii::t('admin/shopcart', 'Данные заказа') ?> <i class="fa fa-file-text"></i></h3>
         <hr>
         <?= Html::beginForm(Url::to(['/admin/shopcart/a/edit', 'id' => $order->id]), 'post', ['class' => 'form-horizontal']) ?>
-        <? if ($order->status != Order::STATUS_BLANK) : ?>
+        <?php if ($order->status != Order::STATUS_BLANK) : ?>
             <div class="form-group">
                 <label class="control-label col-md-2"><?= Yii::t('admin', 'Статус заказа') ?></label>
                 <div class="col-md-10"><?= Html::dropDownList('status', $order->status, $states, ['id' => 'order-status', 'class' => 'form-control']) ?></div>
             </div>
-        <? endif; ?>
-        <? if ($order->email) : ?>
+        <?php endif; ?>
+        <?php if ($order->email) : ?>
             <div class="form-group">
                 <label class="control-label col-md-2"></label>
                 <div class="col-md-8">
@@ -49,23 +49,23 @@ $("#order-status").change(function(){
                     </div>
                 </div>
             </div>
-        <? endif; ?>
+        <?php endif; ?>
         <div class="form-group">
             <label class="control-label col-md-2"><?= Yii::t('admin', 'E-mail') ?></label>
             <div class="col-md-10"><p class="form-control-static"><?= $order->email ?></p></div>
         </div>
-        <? if ($this->context->module->settings['enablePhone']) : ?>
+        <?php if ($this->context->module->settings['enablePhone']) : ?>
             <div class="form-group">
                 <label class="control-label col-md-2"><?= Yii::t('admin/shopcart', 'Телефон') ?></label>
                 <div class="col-md-10"><p class="form-control-static"><?= $order->phone ?></p></div>
             </div>
-        <? endif; ?>
-        <? if ($this->context->module->settings['enableName']) : ?>
+        <?php endif; ?>
+        <?php if ($this->context->module->settings['enableName']) : ?>
             <div class="form-group">
                 <label class="control-label col-md-2"><?= Yii::t('admin', 'Имя') ?></label>
                 <div class="col-md-10"><p class="form-control-static"><?= $order->name ?></p></div>
             </div>
-        <? endif; ?> 
+        <?php endif; ?>
         <div class="form-group">
             <label class="control-label col-md-2"><?= Yii::t('admin', 'Адрес') ?></label>
             <div class="col-md-10"><p class="form-control-static"><?= $order->address ?></p></div>
@@ -109,32 +109,32 @@ $("#order-status").change(function(){
             <label class="control-label col-md-2"><?= Yii::t('admin', 'Способ оплаты') ?></label>
             <div class="col-md-10"><p class="form-control-static"><i class="fa fa-fw fa-money"></i> <?= $order->payment_details ?></p></div>
         </div>
-        <? if ($order->paid_time) { ?>
+        <?php if ($order->paid_time) { ?>
             <div class="form-group">
                 <label class="control-label col-md-2"><?= Yii::t('admin', 'Время оплаты') ?></label>
                 <div class="col-md-10"><p class="form-control-static"><?= Yii::$app->formatter->asDatetime($order->paid_time, 'short') ?></p></div>
             </div>
-        <? } ?>
-        <? if ($order->paid_details) { ?>
+        <?php } ?>
+        <?php if ($order->paid_details) { ?>
             <div class="form-group">
                 <label class="control-label col-md-2"><?= Yii::t('admin', 'Детали оплаты') ?></label>
                 <div class="col-md-10"><p class="form-control-static"><?= $order->paid_details ?></p></div>
             </div> 
-        <? } ?>
+        <?php } ?>
 
 
         <div class="row">
             <label class="control-label col-md-2"><?= Yii::t('admin', 'Платежи') ?></label>
             <div class="col-md-10">
                 <div class="form-control-static">
-                    <? foreach (Checkout::getByOrderId($order->id) as $checkout) { ?>
+                    <?php foreach (Checkout::getByOrderId($order->id) as $checkout) { ?>
                         <i class="fa fa-caret-right"></i>
                         <?= Yii::$app->formatter->asDatetime($checkout->time, 'short') ?>
                         <?= $checkout->renderStatus() ?> <?= $checkout->description ?>
                         <a href="javascript:void(0);" data-toggle="modal" data-target="#requestModal_<?= $checkout->id ?>"><i class="fa fa-info-circle"></i></a>       
                         <?= $checkout->renderModal('requestModal_' . $checkout->id) ?>
                         <br>
-                    <? } ?> 
+                    <?php } ?>
                 </div>
             </div>                
         </div>
@@ -168,16 +168,16 @@ $("#order-status").change(function(){
             <td><?= $good->count ?></td>
             <td><?= $good->discount ?></td>
             <td>
-                <? if ($good->discount) { ?>
+                <?php if ($good->discount) { ?>
                     <b><?= round($good->price * (1 - $good->discount / 100)) ?> <i class="fas fa-ruble-sign"></i></b>
         <strike><small class="text-muted"><?= $good->price ?></small></strike>
-    <? } else { ?>
+    <?php } else { ?>
         <b><?= $good->price ?> <i class="fas fa-ruble-sign"></i></b>
-    <? } ?>
+    <?php } ?>
     </td>
     <td><a href="<?= Url::to(['/admin/' . $module . '/goods/delete', 'id' => $good->primaryKey]) ?>" class="fa fa-times text-red" title="<?= Yii::t('admin', 'Удалить запись') ?>"></a></td>
     </tr>
-<? } ?>
+<?php } ?>
 </tbody>
 </table>
 <h4 class="text-right"><?= Yii::t('admin/shopcart', 'Стоимость {goods_total_count} товара(ов):', ['goods_total_count' => $goods_total_count]) ?> <?= $order->cost ?> <i class="fas fa-ruble-sign"></i></h4>
@@ -227,7 +227,7 @@ if ($str) {
             <?= Html::endForm() ?>            
         </div>
     </div>
-<? } ?>
+<?php } ?>
 <div class="row">
     <div class="col-md-12">
         <h3><?= Yii::t('admin/shopcart', 'Служба доставки') ?> <i class="fa fa-truck"></i></h3>

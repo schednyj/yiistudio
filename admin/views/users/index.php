@@ -15,7 +15,7 @@ $module = $this->context->module->id;
 <?= $this->render('_menu') ?>
 
 <div class="row">
-    <? $form = ActiveForm::begin(['method' => 'get', 'action' => Url::to(['/admin/users'])]); ?>
+    <?php $form = ActiveForm::begin(['method' => 'get', 'action' => Url::to(['/admin/users'])]); ?>
     <div class="col-md-3">
         <?= $form->field($filterForm, 'email') ?>
     </div>
@@ -26,7 +26,7 @@ $module = $this->context->module->id;
             <div class="help-block"></div>
         </div>
     </div>
-    <? ActiveForm::end(); ?>
+    <?php ActiveForm::end(); ?>
 </div>
 
 <?=

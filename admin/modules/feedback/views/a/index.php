@@ -10,7 +10,7 @@ $module = $this->context->module->id;
 
 <?= $this->render('_menu') ?>
 
-<? if ($data->count > 0) : ?>
+<?php if ($data->count > 0) : ?>
     <table class="table table-hover">
         <thead>
             <tr>
@@ -23,30 +23,30 @@ $module = $this->context->module->id;
             </tr>
         </thead>
         <tbody>
-            <? foreach ($data->models as $item) : ?>
+            <?php foreach ($data->models as $item) : ?>
                 <tr>
                     <td><a href="<?= Url::to(['/admin/' . $module . '/a/view', 'id' => $item->primaryKey]) ?>"><?= $item->primaryKey ?></a></td>
-                    <? if ($item->type == Feedback::TYPE_FEEDBACK) { ?>
+                    <?php if ($item->type == Feedback::TYPE_FEEDBACK) { ?>
                         <td><a href="<?= Url::to(['/admin/' . $module . '/a/view', 'id' => $item->primaryKey]) ?>"><b><i class="fa fa-comment"></i></b> <?= Yii::t('admin', 'Сообщение из формы обратной связи') ?></a></td>
-                    <? } else { ?>
+                    <?php } else { ?>
                         <td><a href="<?= Url::to(['/admin/' . $module . '/a/view', 'id' => $item->primaryKey]) ?>"><b><i class="fa fa-phone"></i></b> <?= Yii::t('admin', 'Клиент просит перезвонить') ?></a></td>
-                    <? } ?>
-                    <? if ($item->type == Feedback::TYPE_FEEDBACK) { ?>
+                    <?php } ?>
+                    <?php if ($item->type == Feedback::TYPE_FEEDBACK) { ?>
                         <td> <span class="text-muted"><?= Yii::t('admin', 'Имя') ?>:</span> <?= $item->name ?> <br><span class="text-muted"><?= Yii::t('admin', 'Текст') ?>:</span> <?= ($this->context->module->settings['enableTitle'] && $item->title != '') ? $item->title : StringHelper::truncate($item->text, 64, '...') ?></td>
-                    <? } else { ?>
+                    <?php } else { ?>
                         <td> <span class="text-muted"><?= Yii::t('admin', 'Тел.') ?>:</span> <?= $item->phone ?> <br>&nbsp;</td>
-                    <? } ?>
+                    <?php } ?>
                     <td><?= Yii::$app->formatter->asDatetime($item->time, 'short') ?></td>
                     <td>
-                        <? if ($item->status == Feedback::STATUS_ANSWERED) : ?>
+                        <?php if ($item->status == Feedback::STATUS_ANSWERED) : ?>
                             <span class="text-success"><?= Yii::t('admin', 'Да') ?></span>
-                        <? else : ?>
+                        <?php else : ?>
                             <span class="text-danger"><?= Yii::t('admin', 'Нет') ?></span>
-                        <? endif; ?>
+                        <?php endif; ?>
                     </td>
                     <td><a href="<?= Url::to(['/admin/' . $module . '/a/delete', 'id' => $item->primaryKey]) ?>" class="fa fa-times text-red" title="<?= Yii::t('admin', 'Удалить запись') ?>"></a></td>
                 </tr>
-            <? endforeach; ?>
+            <?php endforeach; ?>
         </tbody>
     </table>
     <?=
@@ -54,6 +54,6 @@ $module = $this->context->module->id;
         'pagination' => $data->pagination
     ])
     ?>
-<? else : ?>
+<?php else : ?>
     <p><?= Yii::t('admin', 'Записи не найдены') ?></p>
-<? endif; ?>
+<?php endif; ?>

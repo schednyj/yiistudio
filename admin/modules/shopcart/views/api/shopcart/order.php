@@ -45,14 +45,14 @@ $this->params['breadcrumbs'][] = $this->title;
                 </td>
                 <td><?= $good->count ?></td>
                 <td>
-                    <? if ($good->discount) : ?>
+                    <?php if ($good->discount) : ?>
                         <del class="text-muted "><small><?= $good->item->oldPrice ?></small></del>
-                    <? endif; ?>
+                    <?php endif; ?>
                     <?= $good->price ?>
                 </td>
                 <td><?= $good->price * $good->count ?></td>
             </tr>
-        <? endforeach; ?>
+        <?php endforeach; ?>
         <tr>
             <td colspan="5" class="text-right">
                 <h4><?= Yii::t('admin/shopcart', 'Стоимость {goods_total_count} товара(ов):', ['goods_total_count' => $goods_total_count]) ?> <?= $order->cost ?> <i class="fas fa-ruble-sign"></i></h4>
@@ -60,7 +60,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </tr>
     </tbody>
 </table>
-<? if ($order->data) : ?>
+<?php if ($order->data) : ?>
     <div class="row">
         <div class="col-md-4">                                
         </div>
@@ -95,7 +95,7 @@ $this->params['breadcrumbs'][] = $this->title;
             </table> 
         </div> 
     </div>
-<? endif; ?>
+<?php endif; ?>
 <div class="row">
     <div class="col-md-4">
         <table class="table">
@@ -107,15 +107,15 @@ $this->params['breadcrumbs'][] = $this->title;
             <tbody>
                 <tr>
                     <td>
-                        <? if ($order->name) { ?>
+                        <?php if ($order->name) { ?>
                             <span class="text-muted"><?= $orderForm->getAttributeLabel('name') ?>:</span> <?= $order->name ?><br/>
-                        <? } ?>
-                        <? if ($order->phone) { ?>
+                        <?php } ?>
+                        <?php if ($order->phone) { ?>
                             <span class="text-muted"><?= $orderForm->getAttributeLabel('phone') ?>:</span> <?= $order->phone ?><br/>
-                        <? } ?>
-                        <? if ($order->address) { ?>
+                        <?php } ?>
+                        <?php if ($order->address) { ?>
                             <span class="text-muted"><?= $orderForm->getAttributeLabel('address') ?>:</span> <?= $order->address ?><br/>
-<? } ?>
+<?php } ?>
                     </td>               
                 </tr>                    
             </tbody>

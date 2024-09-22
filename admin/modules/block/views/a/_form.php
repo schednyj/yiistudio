@@ -26,4 +26,4 @@ $form->field($model, 'text')->widget(Redactor::className(), [
 
 <?= $form->field($model, 'slug') ?>
 <?= Html::submitButton(Yii::t('admin', 'Сохранить'), ['class' => 'btn btn-primary']) ?>
-<? ActiveForm::end(); ?>
+<?php ActiveForm::end(); ?>

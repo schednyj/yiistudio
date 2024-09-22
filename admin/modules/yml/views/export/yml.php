@@ -16,21 +16,21 @@ $marketcategories = [];
         <agency><?= $model->shop_agency; ?></agency>
         <email><?= $model->shop_email; ?></email>
         <currencies>
-            <? foreach ($currencies as $currency): ?>
+            <?php foreach ($currencies as $currency): ?>
                 <currency id="<?= $currency; ?>" <?= $currency === 'RUB' ? 'rate="1"' : ''; ?>/>
-            <? endforeach; ?>
+            <?php endforeach; ?>
         </currencies>
         <categories>
-            <? foreach ($categories as $category): ?>
+            <?php foreach ($categories as $category): ?>
                 <category id="<?= $category->id ?>"><?= $category->title; ?></category>
-            <? endforeach; ?>
+            <?php endforeach; ?>
         </categories>
         <delivery-options>
             <option cost="<?= $model->all_delivery_options_cost ?>" days="<?= $model->all_delivery_options_days ?>"/>
         </delivery-options>
         <cpa><?= $model->shop_cpa; ?></cpa>
         <offers>
-            <? foreach ($items as $item) : ?>
+            <?php foreach ($items as $item) : ?>
                 <offer id="<?= $item->id ?>" type="vendor.model" available="<?= $item->available ? 'true' : 'false'; ?>">
                     <url><?= $item->url ?></url>
                     <price><?= $item->price ?></price>
@@ -55,9 +55,9 @@ $marketcategories = [];
                         <?php
                     }
                     ?>
-                    <? foreach ($item->photos as $photo) { ?>
+                    <?php foreach ($item->photos as $photo) { ?>
                         <picture><?= $photo ?></picture>                       
-                    <? } ?>
+                    <?php } ?>
                     <typePrefix><?= $item->type ?></typePrefix>
                     <model><?= $item->name ?></model>
                     <vendor><?= $item->brand ?></vendor>
@@ -74,7 +74,7 @@ $marketcategories = [];
                     }
                     ?>                 
                 </offer>
-            <? endforeach; ?>
+            <?php endforeach; ?>
         </offers>
     </shop>
 </yml_catalog>

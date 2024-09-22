@@ -16,7 +16,7 @@ $form = ActiveForm::begin([
 <?= $form->field($model, 'name') ?>
 <?= $form->field($model, 'phone') ?>
 <?= Html::submitButton(Yii::t('admin', 'Отправить'), ['class' => 'btn btn-primary']) ?>
-<? ActiveForm::end(); ?>
+<?php ActiveForm::end(); ?>
 <?php
 
 $js = <<<SCRIPT

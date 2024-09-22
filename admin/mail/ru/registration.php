@@ -9,7 +9,7 @@ use admin\models\Setting;
 <p>Вы успешно зарегистрированы на <?= Html::encode($contact_url) ?></p>
 <p>
     Ваш логин: <b><?= Html::encode($email) ?></b>
-    <? if (Setting::get('generatePasswordRegistration')) { ?>
+    <?php if (Setting::get('generatePasswordRegistration')) { ?>
         <br/>Ваш пароль: <b><?= Html::encode($password) ?></b>
-    <? } ?>
+    <?php } ?>
 </p>

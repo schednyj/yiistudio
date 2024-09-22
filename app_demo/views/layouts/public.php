@@ -31,7 +31,7 @@ $shopCart .= '</a>';
 
 
 
-<? $this->beginContent('@admin/views/layouts/base.php'); ?>
+<?php $this->beginContent('@admin/views/layouts/base.php'); ?>
 <div class="bg-first">
     <div class="container">
         <div class="row">
@@ -45,11 +45,11 @@ $shopCart .= '</a>';
                     <li>
                         <a href="mailto:<?= Setting::get('contact_email') ?>" title="E-mail"><i class="fa fa-envelope"></i>  <?= Setting::get('contact_email') ?></a>
                     </li>
-                    <? if (Setting::get('contact_skype')) { ?>
+                    <?php if (Setting::get('contact_skype')) { ?>
                         <li>
                             <a href="skype:<?= Setting::get('contact_skype') ?>?call" title="Skype"><i class="fa fa-skype"></i>  <?= Setting::get('contact_skype') ?></a>
                         </li>
-                    <? } ?>
+                    <?php } ?>
                     <li>
                         <a href="/contact"  title="<?= Yii::t('app', 'Время работы') ?>"><i class="fa fa-calendar"></i> <?= Setting::get('contact_openingHours') ?></a>
                     </li>
@@ -173,4 +173,4 @@ NavBar::end();
     </div>
 </footer>
 <?= \admin\widgets\ScrollUp::widget(); ?>
-<? $this->endContent(); ?>
+<?php $this->endContent(); ?>

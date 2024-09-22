@@ -229,4 +229,4 @@ $_items = Item::find()->select(['id', 'category_id', 'brand_id'])->where(['in', 
         <a class="btn btn-success" href="<?= Url::to(['/admin/' . $module . '/export/execute', 'id' => $model->primaryKey]) ?>" title="<?= Yii::t('admin', 'Выполнить экспорт') ?>"><span class="fa fa-arrow-right"></span> <?= Yii::t('admin', 'Выполнить экспорт') ?></a>
     </div>
 </div>
-<? ActiveForm::end(); ?>
+<?php ActiveForm::end(); ?>

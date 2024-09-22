@@ -18,16 +18,16 @@ $form = ActiveForm::begin([
         ]);
 ?>
 <?= $form->field($model, 'title') ?>
-<? if ($this->context->module->settings['enableThumb']) : ?>
-    <? if ($model->image) : ?>
+<?php if ($this->context->module->settings['enableThumb']) : ?>
+    <?php if ($model->image) : ?>
         <img src="<?= Image::thumb($model->image, 180) ?>">
         <a href="<?= Url::to(['/admin/' . $module . '/a/clear-image', 'id' => $model->id]) ?>" class="text-danger text-red" title="<?= Yii::t('admin', 'Сбросить изображение') ?>"><?= Yii::t('admin', 'Сбросить изображение') ?></a>
-    <? endif; ?>
+    <?php endif; ?>
     <?= $form->field($model, 'image')->fileInput() ?>
-<? endif; ?>
-<? if ($this->context->module->settings['enableShort']) : ?>
+<?php endif; ?>
+<?php if ($this->context->module->settings['enableShort']) : ?>
     <?= $form->field($model, 'short')->textarea() ?>
-<? endif; ?>
+<?php endif; ?>
 <?=
 $form->field($model, 'text')->widget(Redactor::className(), [
     'options' => [
@@ -39,9 +39,9 @@ $form->field($model, 'text')->widget(Redactor::className(), [
 
 <?= $form->field($model, 'time')->widget(DateTimePicker::className()); ?>
 
-<? if ($this->context->module->settings['enableTags']) : ?>
+<?php if ($this->context->module->settings['enableTags']) : ?>
     <?= $form->field($model, 'tagNames')->widget(TagsInput::className()) ?>
-<? endif; ?>
+<?php endif; ?>
 
 
 <?= $form->field($model, 'slug') ?>
@@ -49,4 +49,4 @@ $form->field($model, 'text')->widget(Redactor::className(), [
 
 
 <?= Html::submitButton(Yii::t('admin', 'Сохранить'), ['class' => 'btn btn-primary']) ?>
-<? ActiveForm::end(); ?>
+<?php ActiveForm::end(); ?>

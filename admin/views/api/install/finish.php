@@ -9,7 +9,7 @@ $this->title = Yii::t('admin', 'Установка завершена');
 <h3><?= Yii::t('admin', 'Установка завершена!') ?>
 </h3>
 <br>
-<? if (!INSTALLED) { ?>
+<?php if (!INSTALLED) { ?>
 <p class="bg-warning p-10">
    <b><?= Yii::t('admin', 'ВНИМАНИЕ!<br>Установите значение константы INSTALLED в {path} равным true и обновите эту страницу.', ['path' => Yii::getAlias('@webroot/index.php')]) ?></b>
 </p>
@@ -21,9 +21,9 @@ $this->title = Yii::t('admin', 'Установка завершена');
 <a href="<?= Url::to(['/admin/api/install']) ?>"> <?= Yii::t('admin', 'Повторная установка') ?> <?= \admin\AdminModule::NAME ?></a>
 <br>
 <br>
-<? } else {?>
+<?php } else {?>
 <a href="<?= Url::to(['/admin']) ?>"> <?= Yii::t('admin', 'Перейти в панель управления') ?> <?= \admin\AdminModule::NAME ?></a>
 <br>
 <br>
 <a href="<?= Url::to(['/']) ?>"> <?= Yii::t('admin', 'Перейти на сайт') ?></a>
-<? } ?>
+<?php } ?>
