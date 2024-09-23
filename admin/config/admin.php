@@ -28,7 +28,7 @@ $config = [
         'gii' => 'yii\gii\Module',
         'debug' => 'yii\debug\Module'
     ],
-    'bootstrap' => ['log'],
+    'bootstrap' => ['log', 'admin'],
     'runtimePath' => BASE_PATH . '/runtime',
     'vendorPath' => BASE_PATH . '/vendor',
     'defaultRoute' => 'public',
@@ -130,7 +130,6 @@ $config = [
             ],
         ],
     ],
-    'bootstrap' => ['admin']
 ];
 
 if (YII_DEBUG) {
