@@ -4,6 +4,7 @@ namespace admin\controllers\api;
 
 use Yii;
 use admin\helpers\Data;
+use yii\web\NotFoundHttpException;
 use yii\web\ServerErrorHttpException;
 use admin\helpers\WebConsole;
 use admin\models\api\InstallForm;
@@ -97,7 +98,9 @@ class InstallController extends \yii\web\Controller {
         $uploadsDir = Yii::getAlias('@webroot') . DIRECTORY_SEPARATOR . 'uploads';
         $uploadsDirExists = file_exists($uploadsDir);
         if (($uploadsDirExists && !is_writable($uploadsDir)) || (!$uploadsDirExists && !mkdir($uploadsDir, 0777))) {
-            throw new ServerErrorHttpException(Yii::t('admin', 'Папка ' . $uploadsDir . ' не создана. Проверьте разрешения'));
+            $msg = Yii::t('admin', 'Папка ' . $uploadsDir . ' не создана. Проверьте разрешения');
+//            throw new ServerErrorHttpException($msg);
+            print_r($msg); die;
         }
     }
 

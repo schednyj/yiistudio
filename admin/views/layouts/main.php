@@ -18,8 +18,8 @@ $moduleName = $this->context->module->id;
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <?= Html::csrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
-        <meta content="<?= Html::encode($this->params['description']) ?>" name="description">
-        <meta content="<?= Html::encode($this->params['keywords']) ?>" name="keywords">
+        <meta content="<?= Html::encode($this->params['description']??'') ?>" name="description">
+        <meta content="<?= Html::encode($this->params['keywords']??'') ?>" name="keywords">
         <link rel="shortcut icon" href="<?= $adminAsset->baseUrl ?>/favicon.ico" type="image/x-icon">
         <link rel="icon" href="<?= $adminAsset->baseUrl ?>/favicon.ico" type="image/x-icon">        
         <?php $this->head() ?>
@@ -81,7 +81,7 @@ $moduleName = $this->context->module->id;
                                         <i class="fa fa-<?= $module->icon ?>"></i>
                                     <?php endif; ?>
                                     <span> <?= $module->title ?></span> 
-                                    <?php if ($module->notice > 0 || is_array($module->settings['__submenu_module'])) : ?>
+                                    <?php if ($module->notice > 0 || is_array($module->settings['__submenu_module']??null)) : ?>
                                         <span class="pull-right-container">
                                             <?php if ($module->notice > 0) : ?>
                                                 <small class="label pull-right bg-green"><?= $module->notice ?></small>
@@ -93,7 +93,7 @@ $moduleName = $this->context->module->id;
                                     <?php endif; ?>
                                 </a>
                                 <?php
-                                if (is_array($module->settings['__submenu_module'])) {
+                                if (is_array($module->settings['__submenu_module']??null)) {
                                     ?>
                                     <ul class="treeview-menu">
                                         <?php

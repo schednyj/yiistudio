@@ -17,10 +17,10 @@ if($this->context->module->id != 'admin')
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <?= Html::csrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
-        <meta content="<?= Html::encode($this->params['description']) ?>" name="description">
-        <meta content="<?= Html::encode($this->params['keywords']) ?>" name="keywords">
-        <link rel="shortcut icon" href="<?= $appAsset->baseUrl ?>/favicon.ico" type="image/x-icon">
-        <link rel="icon" href="<?= $appAsset->baseUrl ?>/favicon.ico" type="image/x-icon">        
+        <meta content="<?= Html::encode($this->params['description']??'') ?>" name="description">
+        <meta content="<?= Html::encode($this->params['keywords']??'') ?>" name="keywords">
+        <link rel="shortcut icon" href="<?= $appAsset->baseUrl ?? '' ?>/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="<?= $appAsset->baseUrl ?? '' ?>/favicon.ico" type="image/x-icon">
         <?php $this->head() ?>
     </head>
     <body>

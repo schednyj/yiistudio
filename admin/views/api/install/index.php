@@ -8,7 +8,7 @@ $this->title = Yii::t('admin','Установка');
 <a href="https://yiistudio.ru" target="_blank" title="https://yiistudio.ru">https://yiistudio.ru</a>
 <br>
 
-<?= $text ?>
+<?= $text ?? '' ?>
 <br>
 <?= $this->render('_form', ['model' => $model]) ?>
                

@@ -159,15 +159,22 @@ class DumpController extends \admin\console\Controller {
     public function init() {
         parent::init();
 
-        $this->path = Yii::getAlias(Setting::get('path_dumps'));
+        $settingKey = 'path_dumps';
+
+        if (empty(Setting::get($settingKey))) {
+            Yii::warning(Yii::t('admin', 'Не задан путь до папки с дампами в настройках (' . $settingKey . ').'));
+            return;
+        }
+
+        $this->path = Yii::getAlias(Setting::get($settingKey));
         if (!StringHelper::endsWith($this->path, '/', false)) {
             $this->path .= '/';
         }
         if (!is_dir($this->path)) {
-            throw new InvalidConfigException(Yii::t('admin', 'Path not found!'));
+            throw new InvalidConfigException(Yii::t('admin', 'Path not found: ') . $this->path);
         }
         if (!is_writable($this->path)) {
-            throw new InvalidConfigException(Yii::t('admin', 'No write permissions!'));
+            throw new InvalidConfigException(Yii::t('admin', 'No write permissions: ' . $this->path));
         }
         $this->fileList = FileHelper::findFiles($this->path, ['only' => ['*.sql', '*.gz']]);
     }
