@@ -36,4 +36,7 @@ phpunit.phar
 /runtime
 /.gitignore
 
+app_demo/runtime
 app_demo/config/db_dev.php
+public_html/index.php
+yii
